@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AutoDial - Agent Automation</title>
+    <title>AutoDial</title>
 
-    <link rel="stylesheet" href="Style.css">
+    <!-- Cache-buster so GitHub Pages loads the new CSS -->
+    <link rel="stylesheet" href="Style.css?v=10">
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<header class="navbar">
-    <div class="nav-container">
+<!-- ================= HEADER ================= -->
 
-        <div class="logo">
-            <div class="logo-icon">☎</div>
-            <div>Auto<span>Dial</span></div>
-        </div>
+<header class="header">
 
-        <nav>
-            <a href="#home" class="active">Home</a>
+    <div class="header-inner">
+
+        <a href="#home" class="brand">
+            <div class="brand-icon">☎</div>
+
+            <div class="brand-name">
+                Auto<span>Dial</span>
+            </div>
+        </a>
+
+        <nav class="navigation">
+            <a class="active" href="#home">Home</a>
             <a href="#download">Download</a>
             <a href="#features">Features</a>
             <a href="#details">Details</a>
@@ -29,38 +35,609 @@
         </nav>
 
     </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
+
 <section id="home" class="hero">
 
-    <div class="hero-container">
+    <div class="hero-inner">
 
-        <div class="hero-content">
+        <!-- LEFT SIDE -->
 
-            <div class="badge">
-                🤖 Android Application
+        <div class="hero-left">
+
+            <div class="android-badge">
+                <span>♟</span>
+                Android Application
             </div>
 
             <h1>
                 Welcome to
-                <span>AutoDial</span>
+                <strong>AutoDial</strong>
             </h1>
 
-            <p>
+            <p class="hero-description">
                 A fast and simple automatic M-Pesa and USSD
                 automation application designed for agents.
             </p>
 
-            <a href="#download" class="main-download">
-                ↓ &nbsp; Download AutoDial APK
+            <a href="#download" class="hero-button">
+                <span>⇩</span>
+                Download AutoDial APK
             </a>
 
-            <div class="version">
-                <span class="version-icon">✓</span>
+            <div class="latest-version">
+                <span class="check-circle">✓</span>
                 <span id="versionText">Latest version</span>
             </div>
+
+        </div>
+
+
+        <!-- CENTER PHONE -->
+
+        <div class="hero-phone-area">
+
+            <div class="green-glow glow-a"></div>
+            <div class="green-glow glow-b"></div>
+
+            <div class="hero-phone">
+
+                <div class="notch"></div>
+
+                <div class="hero-phone-screen">
+
+                    <div class="app-circle">
+                        ☎
+                    </div>
+
+                    <div class="phone-app-name">
+                        Auto<span>Dial</span>
+                    </div>
+
+                    <div class="phone-tagline">
+                        Automate • Dial • Grow
+                    </div>
+
+                    <div class="phone-version">
+                        Version 4.0
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE FEATURES -->
+
+        <div class="hero-features">
+
+            <div class="hero-feature">
+
+                <div class="round-icon">ϟ</div>
+
+                <div>
+                    <h3>Fast</h3>
+                    <p>
+                        Process transactions<br>
+                        in seconds.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="hero-feature">
+
+                <div class="round-icon">♢</div>
+
+                <div>
+                    <h3>Secure</h3>
+                    <p>
+                        Built for reliability<br>
+                        and safety.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="hero-feature">
+
+                <div class="round-icon">☎</div>
+
+                <div>
+                    <h3>For Agents</h3>
+                    <p>
+                        Simplify your<br>
+                        M-Pesa and USSD work.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DOWNLOAD ================= -->
+
+<section id="download" class="download-section">
+
+    <div class="download-container">
+
+        <div class="download-title">
+            <span></span>
+            <h2>Download AutoDial</h2>
+        </div>
+
+        <p>
+            Get the latest version of the AutoDial Android application.
+        </p>
+
+        <a id="downloadButton"
+           class="download-button"
+           href="#">
+
+            ⇩ &nbsp; Download AutoDial APK
+
+        </a>
+
+        <div id="downloadStatus">
+            Checking latest release...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section id="features" class="features-section">
+
+    <div class="section-title">
+        <span></span>
+        <h2>Features</h2>
+    </div>
+
+
+    <div class="feature-cards">
+
+
+        <div class="feature-card">
+
+            <div class="feature-card-icon">
+                ▣
+            </div>
+
+            <div>
+                <h3>Automatic M-Pesa</h3>
+
+                <p>
+                    Automatically detects and processes
+                    supported M-Pesa transactions.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-card-icon">
+                *#
+            </div>
+
+            <div>
+                <h3>USSD Automation</h3>
+
+                <p>
+                    Automates supported USSD operations
+                    and offer processing.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-card-icon">
+                ▤
+            </div>
+
+            <div>
+                <h3>Transaction Management</h3>
+
+                <p>
+                    Manage completed, pending, failed
+                    and skipped transactions.
+                </p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= DETAILS ================= -->
+
+<section id="details" class="details-section">
+
+    <div class="details-inner">
+
+
+        <!-- APP PREVIEW -->
+
+        <div class="details-phone-area">
+
+            <div class="details-phone">
+
+                <div class="mini-header">
+                    <span>←</span>
+                    <strong>AutoDial</strong>
+                    <span>◉</span>
+                </div>
+
+
+                <div class="mini-balances">
+
+                    <div class="mini-balance mpesa">
+
+                        <small>M-Pesa</small>
+
+                        <strong>KSh 0.00</strong>
+
+                        <span>Balance</span>
+
+                    </div>
+
+
+                    <div class="mini-balance tokens">
+
+                        <small>Tokens</small>
+
+                        <strong>0</strong>
+
+                        <span>Available</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="transaction-heading">
+                    Transactions
+                </div>
+
+
+                <div class="mini-transactions">
+
+                    <div>
+                        <strong>12</strong>
+                        <span>Completed</span>
+                    </div>
+
+                    <div>
+                        <strong>1</strong>
+                        <span>Pending</span>
+                    </div>
+
+                    <div>
+                        <strong>0</strong>
+                        <span>Failed</span>
+                    </div>
+
+                </div>
+
+
+                <div class="mini-bottom">
+                    <span class="selected">⌂<small>Home</small></span>
+                    <span>▤<small>Transactions</small></span>
+                    <span>⚙<small>Settings</small></span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DETAILS TEXT -->
+
+        <div class="details-content">
+
+            <div class="details-heading">
+                <span></span>
+                <h2>Details</h2>
+            </div>
+
+            <p>
+                AutoDial is designed for agents who need fast and reliable
+                automation of supported M-Pesa and USSD operations.
+            </p>
+
+            <p>
+                The application supports transaction processing, offer
+                matching, USSD automation, airtime management and
+                transaction monitoring.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INSTALLATION ================= -->
+
+<section id="installation" class="installation-section">
+
+    <div class="installation-inner">
+
+        <div class="section-title">
+            <span></span>
+            <h2>Installation</h2>
+        </div>
+
+
+        <div class="installation-steps">
+
+
+            <!-- STEP 1 -->
+
+            <div class="installation-step">
+
+                <div class="step-top">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">⇩</div>
+                </div>
+
+                <h3>Download APK</h3>
+
+                <p>
+                    Tap the Download<br>
+                    AutoDial APK button.
+                </p>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div class="installation-step">
+
+                <div class="step-top">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">□</div>
+                </div>
+
+                <h3>Open File</h3>
+
+                <p>
+                    Open the downloaded<br>
+                    APK file.
+                </p>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+
+            <div class="installation-step">
+
+                <div class="step-top">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">⚙</div>
+                </div>
+
+                <h3>Allow Installation</h3>
+
+                <p>
+                    Allow installation from<br>
+                    unknown sources if requested.
+                </p>
+
+            </div>
+
+
+            <!-- STEP 4 -->
+
+            <div class="installation-step">
+
+                <div class="step-top">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">▣</div>
+                </div>
+
+                <h3>Install</h3>
+
+                <p>
+                    Install the application<br>
+                    on your device.
+                </p>
+
+            </div>
+
+
+            <!-- STEP 5 -->
+
+            <div class="installation-step last">
+
+                <div class="step-top">
+                    <div class="step-number">5</div>
+                    <div class="step-icon">✓</div>
+                </div>
+
+                <h3>Open & Configure</h3>
+
+                <p>
+                    Open AutoDial and<br>
+                    complete the setup.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+    © AutoDial. All rights reserved.
+</footer>
+
+
+<!-- ================= LATEST APK ================= -->
+
+<script>
+
+const OWNER = "mwalimujoshuamumo-ui";
+const REPO = "Autodialweb";
+
+const API =
+    "https://api.github.com/repos/" +
+    OWNER +
+    "/" +
+    REPO +
+    "/releases?per_page=20";
+
+
+async function loadLatestAPK() {
+
+    const button =
+        document.getElementById("downloadButton");
+
+    const status =
+        document.getElementById("downloadStatus");
+
+    const version =
+        document.getElementById("versionText");
+
+
+    try {
+
+        const response = await fetch(API);
+
+        if (!response.ok) {
+            throw new Error("GitHub error");
+        }
+
+        const releases = await response.json();
+
+
+        const release = releases.find(function(item) {
+
+            return (
+                !item.draft &&
+                !item.prerelease &&
+                item.assets &&
+                item.assets.length > 0
+            );
+
+        });
+
+
+        if (!release) {
+            throw new Error("No release");
+        }
+
+
+        let apk = release.assets.find(function(asset) {
+
+            return asset.name
+                .toLowerCase()
+                .endsWith(".apk");
+
+        });
+
+
+        /*
+         * Backup for APK files whose filename
+         * is not displayed with .apk.
+         */
+
+        if (!apk) {
+
+            apk = release.assets.find(function(asset) {
+
+                const name =
+                    asset.name.toLowerCase();
+
+                return (
+                    !name.endsWith(".zip") &&
+                    !name.endsWith(".tar.gz") &&
+                    !name.endsWith(".tgz")
+                );
+
+            });
+
+        }
+
+
+        if (!apk) {
+            throw new Error("APK missing");
+        }
+
+
+        button.href =
+            apk.browser_download_url;
+
+
+        version.textContent =
+            "Latest version: " +
+            release.tag_name;
+
+
+        status.textContent =
+            "Ready to download";
+
+
+    } catch (error) {
+
+        button.href =
+            "https://github.com/" +
+            OWNER +
+            "/" +
+            REPO +
+            "/releases/latest";
+
+
+        version.textContent =
+            "Latest version";
+
+
+        status.textContent =
+            "Open latest GitHub release";
+
+    }
+
+}
+
+
+loadLatestAPK();
+
+</script>
+
+</body>
+    </html>            </div>
 
         </div>
 
