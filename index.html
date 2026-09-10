@@ -1,142 +1,125 @@
-index.html
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AutoDial - Download</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#0b1220">
+
+    <meta
+        name="description"
+        content="AutoDial - Fast and simple automatic dialing application."
+    >
+
+    <title>AutoDial</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================================
-         HEADER
-    ================================= -->
+    <!-- HEADER -->
+    <header>
+        <nav class="nav">
 
-    <header class="header">
+            <a href="#" class="logo">
+                Auto<span>Dial</span>
+            </a>
 
-        <div class="nav">
-
-            <div class="brand">
-
-                <div class="brand-icon">
-                    AD
-                </div>
-
-                <div>
-                    <div class="brand-name">
-                        AutoDial
-                    </div>
-
-                    <div class="brand-sub">
-                        Smart automation
-                    </div>
-                </div>
-
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#download">Download</a>
             </div>
 
-        </div>
-
-
-        <!-- HERO -->
-
-        <div class="hero">
-
-            <div class="hero-badge">
-                ⚡ Latest Android Release Available
-            </div>
-
-            <h1>
-                Welcome to <span>AutoDial</span>
-            </h1>
-
-            <p>
-                Automate your data offers, USSD processing and M-Pesa
-                transactions with the AutoDial Android application.
-            </p>
-
-        </div>
-
+        </nav>
     </header>
 
 
-    <!-- ================================
-         DOWNLOAD
-    ================================= -->
+    <!-- MAIN CONTENT -->
+    <main>
 
-    <section class="download-card">
+        <!-- HERO -->
+        <section class="hero">
 
-        <div class="app-icon">
-            AD
-        </div>
+            <div class="hero-content">
 
-        <h2>
-            AutoDial Android App
-        </h2>
+                <div class="badge">
+                    Android Application
+                </div>
 
-        <div class="version">
-            ✓ Latest Version
-        </div>
+                <h1>
+                    Welcome to <span>AutoDial</span>
+                </h1>
 
-        <p>
-            Download the latest AutoDial APK directly to your Android
-            device.
-        </p>
+                <p class="hero-description">
+                    A fast and simple automatic dialing application
+                    designed to make repeated calling easier.
+                </p>
 
 
-        <!--
-        =====================================================
-        IMPORTANT:
-        CHANGE THE LINK BELOW.
+                <!-- DOWNLOAD -->
+                <div
+                    class="download-area"
+                    id="download"
+                >
 
-        Replace:
-        YOUR-USERNAME
-        YOUR-REPOSITORY
-        AutoDial-debug.apk
+                    <button
+                        type="button"
+                        class="download-btn"
+                        id="downloadButton"
+                    >
 
-        With your real GitHub details and exact APK filename.
-        =====================================================
-        -->
+                        <span class="download-icon">
+                            ⬇
+                        </span>
 
-        <a
-            class="download-btn"
-            href="https://github.com/YOUR-USERNAME/YOUR-REPOSITORY/releases/latest/download/AutoDial-debug.apk"
-            download="AutoDial-debug.apk">
+                        <span id="downloadText">
+                            Download AutoDial APK
+                        </span>
 
-            ⬇ Download Latest APK
-
-        </a>
-
-        <div class="download-note">
-            Direct APK download • No GitHub page required
-        </div>
-
-    </section>
+                    </button>
 
 
-    <!-- ================================
-         FEATURES
-    ================================= -->
+                    <div
+                        id="downloadStatus"
+                        class="download-status"
+                        aria-live="polite"
+                    ></div>
 
-    <section class="section">
+                </div>
 
-        <div class="section-title">
+            </div>
 
-            <h2>
-                AutoDial Features
-            </h2>
-
-            <p>
-                Powerful automation tools in one Android application.
-            </p>
-
-        </div>
+        </section>
 
 
-        <div class="features">
+        <!-- FEATURES -->
+        <section
+            class="features"
+            id="features"
+        >
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    📞
+                </div>
+
+                <h3>
+                    Automatic Dialing
+                </h3>
+
+                <p>
+                    Easily manage repeated dialing
+                    from your Android device.
+                </p>
+
+            </div>
+
 
             <div class="feature">
 
@@ -145,66 +128,12 @@ index.html
                 </div>
 
                 <h3>
-                    USSD Automation
+                    Fast
                 </h3>
 
                 <p>
-                    Automate configured USSD offer processes quickly
-                    and efficiently.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    💳
-                </div>
-
-                <h3>
-                    M-Pesa Processing
-                </h3>
-
-                <p>
-                    Process incoming M-Pesa payment messages and match
-                    them with configured offers.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    📊
-                </div>
-
-                <h3>
-                    Transactions
-                </h3>
-
-                <p>
-                    Track completed, pending and failed transactions
-                    from the dashboard.
-                </p>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    🔄
-                </div>
-
-                <h3>
-                    Automation
-                </h3>
-
-                <p>
-                    Configure automated actions and scheduled offers
-                    according to your settings.
+                    Designed to provide a simple
+                    and responsive dialing experience.
                 </p>
 
             </div>
@@ -221,294 +150,31 @@ index.html
                 </h3>
 
                 <p>
-                    Designed for Android devices with a simple and
-                    easy-to-use interface.
+                    Download the latest AutoDial APK
+                    directly from the official release.
                 </p>
 
             </div>
 
+        </section>
 
-            <div class="feature">
-
-                <div class="feature-icon">
-                    🔐
-                </div>
-
-                <h3>
-                    Secure
-                </h3>
-
-                <p>
-                    Keep your automation configuration and application
-                    settings under your control.
-                </p>
-
-            </div>
-
-        </div>
+    </main>
 
 
-        <!-- INSTALLATION -->
-
-        <div class="install">
-
-            <h2>
-                How to Install
-            </h2>
-
-            <div class="steps">
-
-                <div class="step">
-
-                    <div class="number">
-                        1
-                    </div>
-
-                    <div>
-                        <strong>Download</strong>
-                        <span>
-                            Tap the Download Latest APK button above.
-                        </span>
-                    </div>
-
-                </div>
-
-
-                <div class="step">
-
-                    <div class="number">
-                        2
-                    </div>
-
-                    <div>
-                        <strong>Install</strong>
-                        <span>
-                            Open the downloaded APK and install AutoDial.
-                        </span>
-                    </div>
-
-                </div>
-
-
-                <div class="step">
-
-                    <div class="number">
-                        3
-                    </div>
-
-                    <div>
-                        <strong>Start</strong>
-                        <span>
-                            Open AutoDial and configure your automation.
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================================
-         FOOTER
-    ================================= -->
-
+    <!-- FOOTER -->
     <footer>
 
-        <strong>AutoDial</strong>
-
-        <br><br>
-
-        Smart automation for Android
-
-        <br><br>
-
-        © 2026 AutoDial. All rights reserved.
+        © <span id="year"></span>
+        AutoDial. All rights reserved.
 
     </footer>
 
 
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
 </body>
-</html>
-
-style.css
-
-:root {
-    /* AutoDial theme colours */
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary: #06b6d4;
-    --dark: #0f172a;
-    --dark2: #1e293b;
-    --light: #f8fafc;
-    --white: #ffffff;
-    --text: #334155;
-    --muted: #64748b;
-    --success: #22c55e;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--light);
-    color: var(--text);
-}
-
-/* HEADER */
-.header {
-    background:
-        linear-gradient(135deg,
-        var(--dark),
-        var(--dark2),
-        var(--primary));
-    color: white;
-    padding: 22px 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.header::before {
-    content: "";
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background: rgba(6, 182, 212, 0.18);
-    border-radius: 50%;
-    top: -130px;
-    right: -70px;
-}
-
-.nav {
-    max-width: 1050px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 2;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.brand-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 13px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 21px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-
-.brand-name {
-    font-size: 23px;
-    font-weight: 800;
-}
-
-.brand-sub {
-    font-size: 12px;
-    color: #cbd5e1;
-    margin-top: 2px;
-}
-
-/* HERO */
-.hero {
-    max-width: 1050px;
-    margin: auto;
-    padding: 70px 20px 80px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-}
-
-.hero-badge {
-    display: inline-block;
-    padding: 8px 15px;
-    border-radius: 30px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.18);
-    font-size: 13px;
-    margin-bottom: 18px;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin: 0;
-    font-weight: 900;
-    letter-spacing: -1px;
-}
-
-.hero h1 span {
-    color: #67e8f9;
-}
-
-.hero p {
-    max-width: 650px;
-    margin: 18px auto 30px;
-    color: #dbeafe;
-    line-height: 1.7;
-    font-size: 17px;
-}
-
-/* DOWNLOAD CARD */
-.download-card {
-    max-width: 540px;
-    margin: -35px auto 0;
-    position: relative;
-    z-index: 5;
-    background: var(--white);
-    border-radius: 24px;
-    padding: 35px 25px;
-    text-align: center;
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.15);
-}
-
-.app-icon {
-    width: 92px;
-    height: 92px;
-    margin: -75px auto 20px;
-    border-radius: 23px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 38px;
-    font-weight: 900;
-    box-shadow: 0 10px 25px rgba(37,99,235,0.35);
-}
-
-.download-card h2 {
-    margin: 5px 0 8px;
-    color: var(--dark);
-    font-size: 27px;
-}
-
-.version {
-    display: inline-block;
-    background: #eff6ff;
-    color: var(--primary);
-    border: 1px solid #dbeafe;
-    padding: 7px 14px;
-    border-radius: 30px;
+</html>px;
     font-size: 13px;
     font-weight: bold;
     margin-bottom: 15px;
