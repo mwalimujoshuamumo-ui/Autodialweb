@@ -987,6 +987,933 @@ footer {
         padding: 25px 15px;
     }
 
+    }    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #06111d;
+
+    font-size: 21px;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: #d7e0e8;
+
+    font-size: 15px;
+
+    padding: 10px 0;
+
+    transition: 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #00e676;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 465px;
+
+    background:
+        radial-gradient(
+            circle at 55% 45%,
+            rgba(0,230,118,0.12),
+            transparent 28%
+        ),
+        #06111d;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: auto;
+
+    min-height: 465px;
+
+    padding: 45px 35px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+}
+
+.hero-content {
+    padding-right: 30px;
+}
+
+.badge {
+    display: inline-block;
+
+    border: 1px solid #00e676;
+
+    color: #00e676;
+
+    padding: 7px 16px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #00e676;
+}
+
+.hero p {
+    color: #b7c5d3;
+
+    font-size: 17px;
+
+    max-width: 570px;
+
+    margin-bottom: 28px;
+}
+
+
+/* DOWNLOAD BUTTON */
+
+.main-download,
+.download-button {
+    display: inline-block;
+
+    background: #00d968;
+
+    color: white;
+
+    padding: 15px 28px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.main-download:hover,
+.download-button:hover {
+    background: #00c75f;
+
+    transform: translateY(-2px);
+}
+
+
+/* VERSION */
+
+.version {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 16px;
+
+    color: #aebdca;
+
+    font-size: 13px;
+}
+
+.version-icon {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #00d968;
+
+    color: #06111d;
+
+    font-weight: bold;
+}
+
+
+/* ================= PHONE ================= */
+
+.phone-area {
+    height: 410px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.phone {
+    width: 205px;
+    height: 390px;
+
+    border: 4px solid #38434d;
+
+    border-radius: 30px;
+
+    background: #02070c;
+
+    position: relative;
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 0 3px #111a22,
+        0 20px 50px rgba(0,0,0,0.7);
+}
+
+.phone-notch {
+    position: absolute;
+
+    width: 85px;
+    height: 20px;
+
+    background: #000;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 0 0 13px 13px;
+
+    z-index: 5;
+}
+
+.phone-screen {
+    position: absolute;
+
+    inset: 7px;
+
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(0,230,118,0.18),
+            transparent 30%
+        ),
+        #071522;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.phone-logo {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #00d968;
+
+    color: #06111d;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.phone-title {
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+.phone-title span {
+    color: #00e676;
+}
+
+.phone-subtitle {
+    font-size: 11px;
+
+    color: #d5dce2;
+}
+
+.phone-version {
+    position: absolute;
+
+    bottom: 28px;
+
+    font-size: 10px;
+
+    color: #b4c0ca;
+}
+
+
+/* PHONE GLOW */
+
+.glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: rgba(0,230,118,0.12);
+}
+
+.glow-one {
+    width: 130px;
+    height: 130px;
+
+    left: 22%;
+    top: 30%;
+}
+
+.glow-two {
+    width: 140px;
+    height: 140px;
+
+    right: 20%;
+    bottom: 10%;
+}
+
+
+/* ================= QUICK FEATURES ================= */
+
+.quick-feature {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    z-index: 6;
+}
+
+.feature-fast {
+    right: 0;
+    top: 80px;
+}
+
+.feature-secure {
+    right: -5px;
+    top: 190px;
+}
+
+.feature-agent {
+    right: -5px;
+    top: 300px;
+}
+
+.quick-icon {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: rgba(0,230,118,0.16);
+
+    border: 1px solid rgba(0,230,118,0.4);
+
+    color: #00e676;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+}
+
+.quick-feature strong {
+    display: block;
+
+    font-size: 15px;
+}
+
+.quick-feature p {
+    color: #aab9c6;
+
+    font-size: 12px;
+}
+
+
+/* ================= DOWNLOAD ================= */
+
+.download-section {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 50px 25px;
+}
+
+.download-box {
+    background: #0b1a29;
+
+    border: 1px solid rgba(0,230,118,0.15);
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    padding: 35px;
+}
+
+.section-line,
+.heading-line {
+    width: 6px;
+    height: 27px;
+
+    background: #00e676;
+
+    border-radius: 5px;
+
+    display: inline-block;
+
+    vertical-align: middle;
+
+    margin-right: 10px;
+}
+
+.download-box h2 {
+    display: inline-block;
+
+    vertical-align: middle;
+
+    font-size: 27px;
+}
+
+.download-box p {
+    color: #9eafbd;
+
+    margin: 8px 0 22px;
+}
+
+.download-status {
+    margin-top: 10px;
+
+    color: #718291;
+
+    font-size: 12px;
+}
+
+
+/* ================= CONTENT ================= */
+
+.content-section,
+.installation-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 45px 35px;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    display: inline-block;
+
+    vertical-align: middle;
+
+    font-size: 30px;
+}
+
+
+/* ================= FEATURES ================= */
+
+.features-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.feature-card {
+    background: #0a1a29;
+
+    border: 1px solid #15334a;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    display: flex;
+
+    gap: 18px;
+
+    min-height: 155px;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #00d968;
+
+    color: #062016;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+    font-size: 20px;
+}
+
+.feature-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    color: #9eafbd;
+
+    font-size: 14px;
+}
+
+
+/* ================= DETAILS ================= */
+
+.details-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 55px 35px;
+
+    display: grid;
+
+    grid-template-columns: 330px 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+.details-phone {
+    display: flex;
+
+    justify-content: center;
+}
+
+.mini-phone {
+    width: 230px;
+    height: 340px;
+
+    background: #071522;
+
+    border: 4px solid #26323d;
+
+    border-radius: 25px;
+
+    padding: 20px 14px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.5);
+
+    transform: rotate(-5deg);
+}
+
+.mini-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    margin-bottom: 18px;
+}
+
+.balance-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+}
+
+.balance {
+    padding: 10px;
+
+    border-radius: 7px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.balance.green {
+    background: #00d968;
+
+    color: #062016;
+}
+
+.balance.blue {
+    background: #1763a0;
+}
+
+.balance small {
+    font-size: 8px;
+}
+
+.balance strong {
+    font-size: 14px;
+}
+
+.balance span {
+    font-size: 7px;
+}
+
+.mini-phone h4 {
+    margin: 20px 0 10px;
+
+    font-size: 11px;
+}
+
+.transaction-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 5px;
+}
+
+.transaction-grid div {
+    background: #0e2436;
+
+    border-radius: 5px;
+
+    padding: 9px 3px;
+
+    text-align: center;
+}
+
+.transaction-grid strong {
+    display: block;
+
+    color: #00e676;
+
+    font-size: 16px;
+}
+
+.transaction-grid small {
+    color: #8394a2;
+
+    font-size: 7px;
+}
+
+.mini-nav {
+    margin-top: 65px;
+
+    border-top: 1px solid #1a3041;
+
+    padding-top: 12px;
+
+    text-align: center;
+
+    color: #9db0bd;
+
+    font-size: 7px;
+}
+
+.details-content {
+    max-width: 650px;
+}
+
+.details-content h2 {
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+.details-content p {
+    color: #aebdca;
+
+    font-size: 16px;
+
+    margin-bottom: 18px;
+}
+
+
+/* ================= INSTALLATION ================= */
+
+.installation-section {
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.installation-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 0;
+}
+
+.install-step {
+    position: relative;
+
+    padding: 10px 20px 20px;
+
+    text-align: center;
+
+    border-right: 1px solid #173044;
+}
+
+.install-step:last-child {
+    border-right: none;
+}
+
+.step-number {
+    width: 38px;
+    height: 38px;
+
+    margin: 0 auto 12px;
+
+    background: #00d968;
+
+    color: #062016;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+.step-icon {
+    color: #c5d2dd;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.install-step h3 {
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.install-step p {
+    color: #91a2b0;
+
+    font-size: 12px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #748391;
+
+    font-size: 12px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .nav-container {
+        padding: 15px 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 0;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .phone-area {
+        margin-top: 20px;
+    }
+
+
+    .quick-feature {
+        display: none;
+    }
+
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .details-section {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .details-content {
+        margin: auto;
+    }
+
+
+    .installation-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .install-step {
+        border-right: none;
+
+        border-bottom: 1px solid #173044;
+
+        padding-bottom: 20px;
+    }
+
+    .install-step:last-child {
+        border-bottom: none;
+    }
+
+}
+
+
+/* ================= PHONE ================= */
+
+@media (max-width: 600px) {
+
+    .nav-container {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    nav {
+        gap: 14px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-container {
+        min-height: auto;
+
+        padding: 45px 20px;
+    }
+
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+
+    .phone {
+        width: 180px;
+        height: 340px;
+    }
+
+    .phone-area {
+        height: 360px;
+    }
+
+
+    .download-section,
+    .content-section,
+    .installation-section,
+    .details-section {
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
+
+
+    .download-box {
+        padding: 25px 15px;
+    }
+
 };
 
     font-size: 12px;
