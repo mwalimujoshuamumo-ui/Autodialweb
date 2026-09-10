@@ -1,66 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AutoDial - Agent Automation App</title>
+    <title>AutoDial</title>
 
-<style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">AutoDial</div>
+</header>
+
+<main>
+
+    <!-- WELCOME -->
+    <section class="hero">
+        <div class="badge">Android Application</div>
+
+        <h1>Welcome to <span>AutoDial</span></h1>
+
+        <p>
+            A fast and simple automatic M-Pesa and USSD automation
+            application designed for agents.
+        </p>
+    </section>
+
+
+    <!-- DOWNLOAD -->
+    <section class="download-section">
+
+        <h2>Download AutoDial</h2>
+
+        <p>
+            Get the latest version of the AutoDial Android application.
+        </p>
+
+        <a id="downloadButton"
+           class="download-btn"
+           href="#"
+           target="_blank">
+            Download AutoDial APK
+        </a>
+
+        <p id="version" class="version">
+            Checking latest version...
+        </p>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="section">
+
+        <h2>Features</h2>
+
+        <div class="features">
+
+            <div class="card">
+                <h3>Automatic M-Pesa</h3>
+                <p>
+                    Automatically detects and processes supported
+                    M-Pesa transactions.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>USSD Automation</h3>
+                <p>
+                    Automates supported USSD operations and offer
+                    processing.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Transaction Management</h3>
+                <p>
+                    Manage completed, pending, failed and skipped
+                    transactions.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DETAILS -->
+    <section class="section">
+
+        <h2>Details</h2>
+
+        <div class="details-box">
+
+            <p>
+                AutoDial is designed for agents who need fast and reliable
+                automation of supported M-Pesa and USSD operations.
+            </p>
+
+            <p>
+                The application supports transaction processing, offer
+                matching, USSD automation, airtime management and
+                transaction monitoring.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- INSTALLATION -->
+    <section class="section installation">
+
+        <h2>Installation</h2>
+
+        <div class="details-box">
+
+            <ol>
+                <li>Tap the <strong>Download AutoDial APK</strong> button.</li>
+
+                <li>
+                    Wait for the APK to finish downloading.
+                </li>
+
+                <li>
+                    Open the downloaded APK.
+                </li>
+
+                <li>
+                    Allow installation from unknown sources if Android
+                    requests permission.
+                </li>
+
+                <li>
+                    Install and open AutoDial.
+                </li>
+            </ol>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    © AutoDial. All rights reserved.
+</footer>
+
+
+<script>
+
+const OWNER = "mwalimujoshuamumo-ui";
+const REPO = "Autodialweb";
+
+const API =
+    `https://api.github.com/repos/${OWNER}/${REPO}/releases?per_page=20`;
+
+async function getLatestAPK() {
+
+    const button = document.getElementById("downloadButton");
+    const version = document.getElementById("version");
+
+    try {
+
+        const response = await fetch(API);
+
+        if (!response.ok) {
+            throw new Error("Unable to access GitHub Releases");
+        }
+
+        const releases = await response.json();
+
+        const release = releases.find(r =>
+            !r.draft &&
+            r.assets &&
+            r.assets.length > 0
+        );
+
+        if (!release) {
+            throw new Error("No release found");
+        }
+
+        let apk = release.assets.find(asset =>
+            asset.name.toLowerCase().endsWith(".apk")
+        );
+
+        /*
+         * Fallback in case the APK filename does not visibly
+         * contain .apk.
+         */
+        if (!apk) {
+            apk = release.assets.find(asset => {
+
+                const name = asset.name.toLowerCase();
+
+                return !name.endsWith(".zip") &&
+                       !name.endsWith(".tar.gz") &&
+                       !name.endsWith(".tgz");
+            });
+        }
+
+        if (!apk) {
+            throw new Error("APK not found");
+        }
+
+        button.href = apk.browser_download_url;
+
+        version.textContent =
+            "Latest version: " +
+            (release.tag_name || "Latest");
+
+    } catch (error) {
+
+        version.textContent =
+            "Latest version unavailable";
+
+        button.href =
+            `https://github.com/${OWNER}/${REPO}/releases/latest`;
+    }
 }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#111827;
-    color:#fff;
-    line-height:1.6;
-}
+getLatestAPK();
 
-header{
-    padding:20px 6%;
-    border-bottom:1px solid #263244;
-}
+</script>
 
-.nav{
-    max-width:1050px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    font-size:25px;
-    font-weight:800;
-}
-
-.logo span{
-    color:#20c963;
-}
-
-.nav a{
-    color:#d1d5db;
-    text-decoration:none;
-    font-size:14px;
-}
-
-.hero{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-    padding:75px 20px 55px;
-}
-
-.badge{
-    display:inline-block;
-    padding:7px 15px;
-    border-radius:30px;
-    background:rgba(32,201,99,.12);
+</body>
+</html>    background:rgba(32,201,99,.12);
     border:1px solid rgba(32,201,99,.3);
     color:#4ade80;
     font-size:13px;
