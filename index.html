@@ -4,34 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AutoDial</title>
+    <title>AutoDial - Agent Automation</title>
 
     <link rel="stylesheet" href="Style.css">
 </head>
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
+
 <header class="navbar">
-    <div class="logo">AutoDial</div>
+
+    <div class="nav-container">
+
+        <div class="logo">
+            <div class="logo-icon">☎</div>
+            <span>Auto<span>Dial</span></span>
+        </div>
+
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#download">Download</a>
+            <a href="#features">Features</a>
+            <a href="#details">Details</a>
+            <a href="#installation">Installation</a>
+        </nav>
+
+    </div>
+
 </header>
 
-<main>
 
-    <!-- WELCOME -->
-    <section class="hero">
-        <div class="badge">Android Application</div>
+<!-- ================= HERO ================= -->
 
-        <h1>Welcome to <span>AutoDial</span></h1>
+<section id="home" class="hero">
 
-        <p>
-            A fast and simple automatic M-Pesa and USSD automation
-            application designed for agents.
-        </p>
-    </section>
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🤖 Android Application
+            </div>
+
+            <h1>
+                Welcome to
+                <span>AutoDial</span>
+            </h1>
+
+            <p>
+                A fast and simple automatic M-Pesa and USSD
+                automation application designed for agents.
+            </p>
+
+            <a href="#download" class="main-download">
+                ⬇ &nbsp; Download AutoDial APK
+            </a>
+
+            <div class="version">
+                <span class="version-icon">✓</span>
+                <span id="versionText">Latest version</span>
+            </div>
+
+        </div>
 
 
-    <!-- DOWNLOAD -->
-    <section class="download-section">
+        <!-- PHONE PREVIEW -->
+
+        <div class="phone-area">
+
+            <div class="glow glow-one"></div>
+            <div class="glow glow-two"></div>
+
+            <div class="phone">
+
+                <div class="phone-notch"></div>
+
+                <div class="phone-screen">
+
+                    <div class="phone-logo">☎</div>
+
+                    <div class="phone-title">
+                        Auto<span>Dial</span>
+                    </div>
+
+                    <div class="phone-subtitle">
+                        Automate • Dial • Grow
+                    </div>
+
+                    <div class="phone-version">
+                        Version 4.0
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-feature feature-fast">
+                <div class="quick-icon">ϟ</div>
+                <div>
+                    <strong>Fast</strong>
+                    <p>Process transactions<br>in seconds.</p>
+                </div>
+            </div>
+
+            <div class="quick-feature feature-secure">
+                <div class="quick-icon">♢</div>
+                <div>
+                    <strong>Secure</strong>
+                    <p>Built for reliability<br>and safety.</p>
+                </div>
+            </div>
+
+            <div class="quick-feature feature-agent">
+                <div class="quick-icon">☎</div>
+                <div>
+                    <strong>For Agents</strong>
+                    <p>Simplify your<br>M-Pesa and USSD work.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DOWNLOAD ================= -->
+
+<section id="download" class="download-section">
+
+    <div class="download-box">
+
+        <div class="section-line"></div>
 
         <h2>Download AutoDial</h2>
 
@@ -40,27 +147,381 @@
         </p>
 
         <a id="downloadButton"
-           class="download-btn"
            href="#"
-           target="_blank">
-            Download AutoDial APK
+           class="download-button">
+
+            ⬇ &nbsp; Download AutoDial APK
+
         </a>
 
-        <p id="version" class="version">
-            Checking latest version...
-        </p>
+        <div id="downloadStatus" class="download-status">
+            Checking latest release...
+        </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- FEATURES -->
-    <section class="section">
+<!-- ================= FEATURES ================= -->
+
+<section id="features" class="content-section">
+
+    <div class="section-heading">
+
+        <div class="heading-line"></div>
 
         <h2>Features</h2>
 
-        <div class="features">
+    </div>
 
-            <div class="card">
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ◉
+            </div>
+
+            <div>
+                <h3>Automatic M-Pesa</h3>
+
+                <p>
+                    Automatically detects and processes
+                    supported M-Pesa transactions.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                *#
+            </div>
+
+            <div>
+                <h3>USSD Automation</h3>
+
+                <p>
+                    Automates supported USSD operations
+                    and offer processing.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ▣
+            </div>
+
+            <div>
+                <h3>Transaction Management</h3>
+
+                <p>
+                    Manage completed, pending, failed
+                    and skipped transactions.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DETAILS ================= -->
+
+<section id="details" class="details-section">
+
+    <div class="details-phone">
+
+        <div class="mini-phone">
+
+            <div class="mini-top">
+                ← <strong>AutoDial</strong> ⋮
+            </div>
+
+            <div class="balance-grid">
+
+                <div class="balance green">
+                    <small>M-Pesa</small>
+                    <strong>KSh 0.00</strong>
+                    <span>Balance</span>
+                </div>
+
+                <div class="balance blue">
+                    <small>Tokens</small>
+                    <strong>0</strong>
+                    <span>Available</span>
+                </div>
+
+            </div>
+
+            <h4>Transactions</h4>
+
+            <div class="transaction-grid">
+
+                <div>
+                    <strong>12</strong>
+                    <small>Completed</small>
+                </div>
+
+                <div>
+                    <strong>1</strong>
+                    <small>Pending</small>
+                </div>
+
+                <div>
+                    <strong>0</strong>
+                    <small>Failed</small>
+                </div>
+
+            </div>
+
+            <div class="mini-nav">
+                Home &nbsp;&nbsp; Transactions &nbsp;&nbsp; Settings
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="details-content">
+
+        <div class="heading-line"></div>
+
+        <h2>Details</h2>
+
+        <p>
+            AutoDial is designed for agents who need fast and
+            reliable automation of supported M-Pesa and USSD
+            operations.
+        </p>
+
+        <p>
+            The application supports transaction processing,
+            offer matching, USSD automation, airtime management
+            and transaction monitoring.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INSTALLATION ================= -->
+
+<section id="installation" class="installation-section">
+
+    <div class="section-heading">
+
+        <div class="heading-line"></div>
+
+        <h2>Installation</h2>
+
+    </div>
+
+
+    <div class="installation-grid">
+
+
+        <div class="install-step">
+
+            <div class="step-number">1</div>
+
+            <div class="step-icon">⇩</div>
+
+            <h3>Download APK</h3>
+
+            <p>
+                Tap the Download AutoDial APK button.
+            </p>
+
+        </div>
+
+
+        <div class="install-step">
+
+            <div class="step-number">2</div>
+
+            <div class="step-icon">□</div>
+
+            <h3>Open File</h3>
+
+            <p>
+                Open the downloaded APK file.
+            </p>
+
+        </div>
+
+
+        <div class="install-step">
+
+            <div class="step-number">3</div>
+
+            <div class="step-icon">⚙</div>
+
+            <h3>Allow Installation</h3>
+
+            <p>
+                Allow installation from unknown
+                sources if requested.
+            </p>
+
+        </div>
+
+
+        <div class="install-step">
+
+            <div class="step-number">4</div>
+
+            <div class="step-icon">▣</div>
+
+            <h3>Install</h3>
+
+            <p>
+                Install the application on your device.
+            </p>
+
+        </div>
+
+
+        <div class="install-step">
+
+            <div class="step-number">5</div>
+
+            <div class="step-icon">✓</div>
+
+            <h3>Open & Configure</h3>
+
+            <p>
+                Open AutoDial and complete the setup.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © AutoDial. All rights reserved.
+
+</footer>
+
+
+<!-- ================= GITHUB DOWNLOAD ================= -->
+
+<script>
+
+const OWNER = "mwalimujoshuamumo-ui";
+const REPO = "Autodialweb";
+
+const RELEASE_API =
+    `https://api.github.com/repos/${OWNER}/${REPO}/releases?per_page=20`;
+
+async function loadLatestRelease() {
+
+    const button = document.getElementById("downloadButton");
+    const status = document.getElementById("downloadStatus");
+    const versionText = document.getElementById("versionText");
+
+    try {
+
+        const response = await fetch(RELEASE_API);
+
+        if (!response.ok) {
+            throw new Error("GitHub release request failed");
+        }
+
+        const releases = await response.json();
+
+        const release = releases.find(item =>
+            !item.draft &&
+            item.assets &&
+            item.assets.length > 0
+        );
+
+        if (!release) {
+            throw new Error("No release available");
+        }
+
+        let apk = release.assets.find(asset =>
+            asset.name.toLowerCase().endsWith(".apk")
+        );
+
+        /*
+         * Backup for APK assets whose displayed filename
+         * does not visibly contain .apk.
+         */
+
+        if (!apk) {
+
+            apk = release.assets.find(asset => {
+
+                const name = asset.name.toLowerCase();
+
+                return !name.endsWith(".zip") &&
+                       !name.endsWith(".tar.gz") &&
+                       !name.endsWith(".tgz");
+
+            });
+
+        }
+
+        if (!apk) {
+            throw new Error("APK not found");
+        }
+
+
+        button.href = apk.browser_download_url;
+
+        button.target = "_blank";
+
+        versionText.textContent =
+            "Latest version: " +
+            (release.tag_name || "Latest");
+
+
+        status.textContent =
+            "Ready to download";
+
+
+    } catch (error) {
+
+        button.href =
+            `https://github.com/${OWNER}/${REPO}/releases/latest`;
+
+        button.target = "_blank";
+
+        versionText.textContent =
+            "Latest version";
+
+        status.textContent =
+            "Open latest GitHub release";
+
+    }
+
+}
+
+loadLatestRelease();
+
+</script>
+
+</body>
+            </html>            <div class="card">
                 <h3>Automatic M-Pesa</h3>
                 <p>
                     Automatically detects and processes supported
