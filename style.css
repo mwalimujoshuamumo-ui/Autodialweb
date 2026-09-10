@@ -1,16 +1,10 @@
-:root {
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary: #06b6d4;
-    --dark: #0f172a;
-    --dark2: #1e293b;
-    --light: #f8fafc;
-    --white: #ffffff;
-    --text: #334155;
-    --muted: #64748b;
-}
+/* =========================================
+   AutoDial Website - Complete CSS
+   ========================================= */
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -19,70 +13,463 @@ html {
 }
 
 body {
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--light);
-    color: var(--text);
+    background: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.6;
 }
 
-/* ================================
+/* =========================================
    HEADER
-================================ */
+   ========================================= */
 
-.header {
-    background: linear-gradient(
-        135deg,
-        var(--dark),
-        var(--dark2),
-        var(--primary)
-    );
-
-    color: white;
-    padding: 22px 20px;
-    position: relative;
-    overflow: hidden;
+header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.header::before {
-    content: "";
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background: rgba(6, 182, 212, 0.18);
-    border-radius: 50%;
-    top: -130px;
-    right: -70px;
-}
-
-.header::after {
-    content: "";
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    background: rgba(37, 99, 235, 0.15);
-    border-radius: 50%;
-    bottom: -100px;
-    left: -70px;
-}
-
-/* ================================
-   NAVIGATION
-================================ */
-
-.nav {
-    max-width: 1050px;
+.navbar {
+    max-width: 1100px;
     margin: auto;
+    padding: 16px 20px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    position: relative;
-    z-index: 2;
 }
 
-.brand {
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+nav {
     display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #374151;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero {
+    min-height: 75vh;
+    padding: 80px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+    );
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    color: #6b7280;
+}
+
+/* =========================================
+   DOWNLOAD BUTTON
+   ========================================= */
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.download-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+/* =========================================
+   RELEASE LINK
+   ========================================= */
+
+.release-link {
+    display: inline-block;
+    margin-top: 18px;
+
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.release-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   GENERAL SECTIONS
+   ========================================= */
+
+section {
+    padding: 70px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #6b7280;
+}
+
+/* =========================================
+   FEATURES
+   ========================================= */
+
+.features {
+    background: #ffffff;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.feature-card {
+    padding: 30px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    text-align: center;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dbeafe;
+    color: #2563eb;
+
+    font-size: 26px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.feature-card p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+/* =========================================
+   ABOUT SECTION
+   ========================================= */
+
+.about {
+    background: #f5f7fb;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    color: #4b5563;
+}
+
+/* =========================================
+   DOWNLOAD SECTION
+   ========================================= */
+
+.download-section {
+    background: #111827;
+    color: #ffffff;
+    text-align: center;
+}
+
+.download-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.download-section p {
+    color: #d1d5db;
+    margin-bottom: 25px;
+}
+
+.download-section .download-btn {
+    background: #ffffff;
+    color: #111827;
+    box-shadow: none;
+}
+
+.download-section .download-btn:hover {
+    background: #e5e7eb;
+}
+
+/* =========================================
+   VERSION / RELEASE INFO
+   ========================================= */
+
+.version-info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.download-section .version-info {
+    color: #9ca3af;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: #030712;
+    color: #9ca3af;
+
+    padding: 30px 20px;
+
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+footer a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+   ========================================= */
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 14px 16px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 65vh;
+        padding: 60px 20px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 18px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .download-section h2 {
+        font-size: 30px;
+    }
+}
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    .logo {
+        font-size: 21px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        padding: 50px 16px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .download-btn {
+        width: 100%;
+        max-width: 320px;
+        padding: 15px 20px;
+    }
+
+    .feature-card {
+        padding: 24px 18px;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}    display: flex;
     align-items: center;
     gap: 12px;
 }
