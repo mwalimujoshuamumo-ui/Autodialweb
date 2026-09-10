@@ -309,6 +309,27 @@ a { text-decoration: none; color: inherit; }
   .phone-mock { width: 200px; height: 420px; }
   .phone-mock.small { width: 180px; height: 380px; }
   .install-grid { grid-template-columns: 1fr; }
+  }{ font-size: 42px; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-right { justify-content: center; }
+  .pill, .version-row { justify-content: center; }
+  .details-section { grid-template-columns: 1fr; text-align: center; }
+  .details-text h2 { margin-left: auto; margin-right: auto; }
+  .bar-lg { margin: 0 auto; }
+  .install-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .nav-links { gap: 14px; font-size: 13px; }
+  .hero h1 { font-size: 34px; }
+  .hero { padding: 40px 18px 60px; }
+  .section { padding: 44px 18px; }
+  .btn-download { padding: 14px 24px; font-size: 15px; width: 100%; justify-content: center; }
+  .btn-download.big { padding: 16px 28px; }
+  .phone-mock { width: 200px; height: 420px; }
+  .phone-mock.small { width: 180px; height: 380px; }
+  .install-grid { grid-template-columns: 1fr; }
   }13px;
 }
 
