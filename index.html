@@ -1,85 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoCon APK · Downloads</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AutoCon · Download APK</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
 
-    body {
-      background: #0b0e14;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 24px;
-    }
+  body {
+    background: #0a0c10;
+    color: #e6edf6;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
 
-    .app-download {
-      max-width: 1100px;
-      width: 100%;
-      background: #13171f;
-      border-radius: 40px;
-      box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.03);
-      overflow: hidden;
-      padding: 32px 36px 40px 36px;
-    }
+  .wrap {
+    max-width: 1000px;
+    width: 100%;
+    background: #11161f;
+    border-radius: 32px;
+    padding: 28px 26px 34px 26px;
+    box-shadow: 0 25px 60px -25px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.03);
+  }
 
-    .header-brand {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 36px;
-      flex-wrap: wrap;
-    }
+  /* ============ TOP LEFT: LOGO + APP NAME + VERSION ============ */
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
 
-    .logo-container {
-      width: 86px;
-      height: 86px;
-      background: #1e2632;
-      border-radius: 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
-      flex-shrink: 0;
-      position: relative;
-    }
+  .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+    background: #05080d;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 10px 24px -10px rgba(0,0,0,0.9), 0 0 0 1px rgba(76,175,80,0.25);
+    position: relative;
+  }
 
-    .logo-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+  .logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+  /* fallback logo (green/blue "A" ring like your photo) */
+  .logo .fallback {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    background: #05080d;
+  }
+  .logo .fallback svg { width: 68px; height: 68px; }
 
-    .brand-text .app-name {
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #ffffff 0%, #b0c4de 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1.1;
-    }
+  .titles { display: flex; flex-direction: column; gap: 6px; }
 
-    .brand-text .version-badge {
-      display: inline-flex;
+  .app-name {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    line-height: 1;
+  }
+
+  .version-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #16202c;
+    border: 1px solid #24313f;
+    color: #8fd18f;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 100px;
+    width: fit-content;
+    letter-spacing: 0.3px;
+  }
+  .version-line i { font-size: 11px; color: #4caf50; }
+
+  /* ============ MAIN DOWNLOAD BUTTON ============ */
+  .hero-download {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 22px;
+    background: linear-gradient(145deg, #14202a, #0f1620);
+    border: 1px solid #1f2c38;
+    border-radius: 24px;
+    margin-bottom: 34px;
+    flex-wrap: wrap;
+  }
+
+  .btn-main {
+    background: linear-gradient(145deg, #2e7d32, #1b5e20);
+    color: #fff;
+    border: none;
+    padding: 18px 36px;
+    border-radius: 60px;
+    font-size: 17px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 14px 30px -12px rgba(76,175,80,0.55);
+    letter-spacing: 0.3px;
+    text-decoration: none;
+  }
+  .btn-main:hover { transform: translateY(-2px); box-shadow: 0 20px 36px -14px rgba(76,175,80,0.75); }
+  .btn-main i { font-size: 20px; }
+
+  .hero-meta { display: flex; flex-direction: column; gap: 6px; }
+  .hero-meta .size { font-size: 14px; color: #7f8fa3; display: flex; align-items: center; gap: 14px; }
+  .hero-meta .size i { color: #4caf50; }
+  .hero-meta .badge {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+    background: #1a3322; color: #6fcf97;
+    border: 1px solid #2c573a;
+    padding: 4px 12px; border-radius: 100px;
+    width: fit-content; text-transform: uppercase;
+  }
+
+  /* ============ SECTION HEADINGS ============ */
+  .section-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .section-title i { color: #4caf50; font-size: 18px; }
+  .section-sub {
+    font-size: 14px;
+    color: #7b8a9e;
+    margin-bottom: 20px;
+  }
+
+  /* ============ RELEASE LIST ============ */
+  .releases { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+
+  .release {
+    background: #161c26;
+    border: 1px solid #212b38;
+    border-radius: 20px;
+    padding: 18px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 22px;
+    transition: 0.2s;
+  }
+  .release:hover {
+    background: #1a212d;
+    border-color: #2b3846;
+    box-shadow: 0 10px 24px -16px rgba(0,0,0,0.8);
+  }
+
+  .release .ver {
+    display: flex; align-items: center; gap: 12px;
+    min-width: 150px;
+  }
+  .release .ver .num {
+    font-size: 21px;
+    font-weight: 800;
+    color: #ffffff;
+  }
+  .release .ver .tag {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: #22303f;
+    color: #a5b8cc;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+  .release .ver .tag.latest {
+    background: #1a3322;
+    color: #6fcf97;
+    border: 1px solid #2c573a;
+  }
+
+  .release .when {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 14px; color: #9aa9bc;
+    min-width: 190px;
+  }
+  .release .when i { color: #4caf50; font-size: 13px; width: 15px; }
+
+  .release .notes {
+    flex: 1;
+    min-width: 200px;
+    font-size: 14px;
+    color: #c2d0e0;
+    line-height: 1.5;
+    background: #0e141c;
+    border-left: 3px solid #4caf50;
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .release .notes i { color: #4caf50; font-size: 13px; flex-shrink: 0; }
+
+  .release .dl {
+    background: #22303f;
+    border: 1px solid #2b3846;
+    color: #d0dded;
+    padding: 10px 18px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .release .dl i { color: #4caf50; font-size: 14px; }
+  .release .dl:hover { background: #2e7d32; border-color: #4caf50; color: #fff; }
+  .release .dl:hover i { color: #fff; }
+
+  /* ============ QUERIES SECTION ============ */
+  .queries {
+    background: #161c26;
+    border: 1px solid #212b38;
+    border-radius: 24px;
+    padding: 24px 26px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .queries .left h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .queries .left h3 i { color: #4caf50; }
+  .queries .left p { font-size: 14px; color: #8e9db0; }
+
+  .phone-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #0a0f15;
+    border: 1px solid #2a3a4e;
+    padding: 14px 24px 14px 20px;
+    border-radius: 60px;
+    box-shadow: 0 8px 20px -14px rgba(0,0,0,0.9);
+    text-decoration: none;
+    transition: 0.2s;
+  }
+  .phone-box:hover { border-color: #4caf50; background: #0e1620; }
+  .phone-box i { font-size: 26px; color: #4caf50; }
+  .phone-box .lbl {
+    font-size: 11px;
+    color: #7b8a9e;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .phone-box .num {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 720px) {
+    .wrap { padding: 22px 18px 28px 18px; border-radius: 26px; }
+    .app-name { font-size: 26px; }
+    .logo { width: 66px; height: 66px; border-radius: 20px; }
+    .release { flex-direction: column; align-items: flex-start; }
+    .release .notes { width: 100%; }
+    .release .dl { width: 100%; justify-content: center; }
+    .hero-download { flex-direction: column; align-items: flex-start; }
+    .btn-main { width: 100%; justify-content: center; padding: 16px 20px; font-size: 16px; }
+    .queries { flex-direction: column; align-items: flex-start; }
+    .phone-box { width: 100%; justify-content: center; }
+    .phone-box .num { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ========= TOP LEFT: LOGO + APP NAME + VERSION ========= -->
+  <div class="top">
+    <div class="logo">
+      <!-- 🔁 REPLACE THIS <img> WITH YOUR REAL LOGO FILE, e.g. <img src="logo.png" alt="AutoCon"> -->
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234caf50'/%3E%3Cstop offset='100%25' stop-color='%232196f3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='42' fill='none' stroke='url(%23g)' stroke-width='9'/%3E%3Cpath d='M34 68 L50 28 L66 68' fill='none' stroke='%23ffffff' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='41' y1='56' x2='59' y2='56' stroke='%23ffffff' stroke-width='10' stroke-linecap='round'/%3E%3C/svg%3E" alt="AutoCon logo" />
+    </div>
+
+    <div class="titles">
+      <div class="app-name">AutoCon</div>
+      <div class="version-line">
+        <i class="fas fa-circle-check"></i> v2.4.1 · Latest Version
+      </div>
+    </div>
+  </div>
+
+  <!-- ========= MAIN DOWNLOAD APK BUTTON ========= -->
+  <div class="hero-download">
+    <a href="#" class="btn-main">
+      <i class="fas fa-download"></i> Download APK
+    </a>
+    <div class="hero-meta">
+      <div class="size">
+        <span><i class="fas fa-hdd"></i> 24.6 MB</span>
+        <span><i class="fas fa-shield-halved"></i> Verified &amp; Safe</span>
+      </div>
+      <span class="badge">Latest Release</span>
+    </div>
+  </div>
+
+  <!-- ========= ALL RELEASES ========= -->
+  <div class="section-title"><i class="fas fa-code-branch"></i> All Releases</div>
+  <div class="section-sub">Full version history with date, time &amp; release notes.</div>
+
+  <div class="releases">
+
+    <!-- Release 1 -->
+    <div class="release">
+      <div class="ver">
+        <span class="num">v2.4.1</span>
+        <span class="tag latest">Latest</span>
+      </div>
+      <div class="when">
+        <i class="far fa-calendar"></i> 2025-02-18
+        <i class="far fa-clock"></i> 14:32 UTC
+      </div>
+      <div class="notes">
+        <i class="fas fa-bolt"></i> Improved OBD-II connection stability, added dark mode, fixed crash on Android 14.
+      </div>
+      <a href="#" class="dl"><i class="fas fa-download"></i> Download</a>
+    </div>
+
+    <!-- Release 2 -->
+    <div class="release">
+      <div class="ver">
+        <span class="num">v2.3.8</span>
+        <span class="tag">Stable</span>
+      </div>
+      <div class="when">
+        <i class="far fa-calendar"></i> 2025-01-27
+        <i class="far fa-clock"></i> 09:15 UTC
+      </div>
+      <div class="notes">
+        <i class="fas fa-bolt"></i> New real-time sensor dashboard, support for Bluetooth 5.0, minor UI polish.
+      </div>
+      <a href="#" class="dl"><i class="fas fa-download"></i> Download</a>
+    </div>
+
+    <!-- Release 3 -->
+    <div class="release">
+      <div class="ver">
+        <span class="num">v2.3.0</span>
+        <span class="tag">Stable</span>
+      </div>
+      <div class="when">
+        <i class="far fa-calendar"></i> 2024-12-10
+        <i class="far fa-clock"></i> 18:45 UTC
+      </div>
+      <div class="notes">
+        <i class="fas fa-bolt"></i> Major update: live data logging, export to CSV, redesigned settings panel.
+      </div>
+      <a href="#" class="dl"><i class="fas fa-download"></i> Download</a>
+    </div>
+
+    <!-- Release 4 -->
+    <div class="release">
+      <div class="ver">
+        <span class="num">v2.1.2</span>
+        <span class="tag">Legacy</span>
+      </div>
+      <div class="when">
+        <i class="far fa-calendar"></i> 2024-10-05
+        <i class="far fa-clock"></i> 11:20 UTC
+      </div>
+      <div class="notes">
+        <i class="fas fa-bolt"></i> Hotfix for GPS sync issue, improved battery efficiency by 18%.
+      </div>
+      <a href="#" class="dl"><i class="fas fa-download"></i> Download</a>
+    </div>
+
+  </div>
+
+  <!-- ========= QUERIES → SEND TO WHATSAPP / PHONE ========= -->
+  <div class="queries">
+    <div class="left">
+      <h3><i class="fas fa-circle-question"></i> Have Queries?</h3>
+      <p>Send us a message or call — we'll respond quickly.</p>
+    </div>
+
+    <!-- WhatsApp link uses the number in international format (no +, no spaces) -->
+    <a href="https://wa.me/254791267095" class="phone-box" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i>
+      <div>
+        <div class="lbl">Send to WhatsApp / Call</div>
+        <div class="num">0791 267 095</div>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+</body>
+      </html>      display: inline-flex;
       align-items: center;
       gap: 8px;
       background: #1e2a3a;
