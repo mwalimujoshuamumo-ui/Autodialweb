@@ -2,13 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#111827">
 
-    <title>AutoDial - Android Application</title>
+    <title>Download AutoDial</title>
 
     <style>
         * {
@@ -18,49 +15,383 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             background: #111827;
-            color: #ffffff;
+            color: white;
             min-height: 100vh;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 92%;
-            max-width: 1000px;
-            margin: auto;
+            display: flex;
+            flex-direction: column;
         }
 
         header {
-            padding: 25px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 22px 6%;
+            border-bottom: 1px solid #263244;
         }
 
-        .header-content {
+        .nav {
+            max-width: 950px;
+            margin: auto;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 25px;
             font-weight: 800;
-            letter-spacing: 0.5px;
         }
 
         .logo span {
             color: #22c55e;
         }
 
-        .badge {
+        .home {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .home:hover {
+            color: #22c55e;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .download-box {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .app-icon {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 25px;
+            border-radius: 20px;
+            background: #22c55e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 44px;
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            color: #22c55e;
+        }
+
+        .text {
+            color: #9ca3af;
+            font-size: 17px;
+            margin-bottom: 28px;
+        }
+
+        .version {
             display: inline-block;
-            background: rgba(34,197,94,0.12);
-            color: #4ade80;
-            border: 1px solid rgba(34,197,94,0.3);
-            padding: 7px 14px;
-            border-radius: 30px;
+            padding: 9px 16px;
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 8px;
+            color: #d1d5db;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: #22c55e;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .download-btn:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+        }
+
+        .download-btn.disabled {
+            background: #374151;
+            color: #9ca3af;
+            pointer-events: none;
+        }
+
+        .file {
+            margin-top: 14px;
+            color: #6b7280;
             font-size: 13px;
-            font-weight: 600;
+        }
+
+        .error {
+            display: none;
+            margin-top: 18px;
+            color: #fca5a5;
+            font-size: 14px;
+        }
+
+        footer {
+            padding: 22px;
+            text-align: center;
+            border-top: 1px solid #263244;
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 35px;
+            }
+
+            .download-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+
+        <div class="logo">
+            Auto<span>Dial</span>
+        </div>
+
+        <a class="home" href="download.html">
+            Home
+        </a>
+
+    </div>
+</header>
+
+
+<main>
+
+    <div class="download-box">
+
+        <div class="app-icon">
+            ↓
+        </div>
+
+        <h1>
+            Download <span>AutoDial</span>
+        </h1>
+
+        <p class="text">
+            Get the latest AutoDial Android application.
+        </p>
+
+        <div id="version" class="version">
+            Checking latest version...
+        </div>
+
+        <br>
+
+        <a
+            id="downloadButton"
+            class="download-btn disabled"
+            href="#"
+        >
+            Preparing download...
+        </a>
+
+        <div id="file" class="file"></div>
+
+        <div id="error" class="error"></div>
+
+    </div>
+
+</main>
+
+
+<footer>
+    © AutoDial. All rights reserved.
+</footer>
+
+
+<script>
+
+    const OWNER = "mwalimujoshuamumo-ui";
+
+    const REPO = "Autodialweb";
+
+    const API =
+        "https://api.github.com/repos/" +
+        OWNER +
+        "/" +
+        REPO +
+        "/releases?per_page=20";
+
+
+    const button =
+        document.getElementById("downloadButton");
+
+    const version =
+        document.getElementById("version");
+
+    const file =
+        document.getElementById("file");
+
+    const error =
+        document.getElementById("error");
+
+
+    async function getLatestAPK() {
+
+        try {
+
+            const response = await fetch(API, {
+                headers: {
+                    "Accept":
+                        "application/vnd.github+json"
+                },
+                cache: "no-store"
+            });
+
+
+            if (!response.ok) {
+                throw new Error(
+                    "Unable to find the latest AutoDial release."
+                );
+            }
+
+
+            const releases =
+                await response.json();
+
+
+            let selectedRelease = null;
+            let selectedAPK = null;
+
+
+            for (const release of releases) {
+
+                if (release.draft) {
+                    continue;
+                }
+
+
+                const assets =
+                    release.assets || [];
+
+
+                /*
+                 * Look for a real APK first.
+                 */
+                selectedAPK = assets.find(asset =>
+                    (asset.name || "")
+                    .toLowerCase()
+                    .endsWith(".apk")
+                );
+
+
+                /*
+                 * Your current V.4 asset appears as
+                 * UPDATED1, so use the non-source
+                 * asset if the extension is hidden.
+                 */
+                if (!selectedAPK) {
+
+                    selectedAPK = assets.find(asset => {
+
+                        const name =
+                            (asset.name || "")
+                            .toLowerCase();
+
+                        return (
+                            !name.endsWith(".zip") &&
+                            !name.endsWith(".tar.gz") &&
+                            !name.endsWith(".tgz")
+                        );
+
+                    });
+
+                }
+
+
+                if (selectedAPK) {
+
+                    selectedRelease = release;
+
+                    break;
+
+                }
+
+            }
+
+
+            if (!selectedRelease || !selectedAPK) {
+                throw new Error(
+                    "No APK is available."
+                );
+            }
+
+
+            /*
+             * Activate the download button.
+             */
+            button.href =
+                selectedAPK.browser_download_url;
+
+            button.classList.remove("disabled");
+
+            button.textContent =
+                "↓ Download AutoDial APK";
+
+
+            /*
+             * Show only short information.
+             */
+            version.textContent =
+                "Latest version: " +
+                (selectedRelease.tag_name || "Latest");
+
+
+            file.textContent =
+                selectedAPK.name || "AutoDial APK";
+
+
+        } catch (e) {
+
+            button.textContent =
+                "APK Currently Unavailable";
+
+            version.textContent =
+                "Download unavailable";
+
+            error.textContent =
+                "The latest APK could not be found.";
+
+            error.style.display =
+                "block";
+
+        }
+
+    }
+
+
+    getLatestAPK();
+
+</script>
+
+</body>
+</html>            font-weight: 600;
         }
 
         .hero {
