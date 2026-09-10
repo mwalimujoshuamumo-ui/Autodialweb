@@ -4,183 +4,224 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AutoDial - Download APK</title>
+    <title>AutoDial APK</title>
 
-    <meta name="description"
-          content="Download the latest AutoDial Android APK.">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        .header {
+            background: #111827;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .header p {
+            margin: 8px 0 0;
+            color: #d1d5db;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            border-radius: 22px;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        h2 {
+            margin: 10px 0;
+            font-size: 25px;
+        }
+
+        .version {
+            display: inline-block;
+            background: #e8f0ff;
+            color: #2563eb;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin: 10px 0 20px;
+        }
+
+        .description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+            padding: 16px 20px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .download-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .release-btn {
+            display: inline-block;
+            margin-top: 15px;
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .features {
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .feature {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .feature:last-child {
+            border-bottom: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 15px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+            }
+
+            .card {
+                padding: 25px 18px;
+            }
+
+            .header h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="header">
-    <div class="logo">
-        <div class="logo-icon">A</div>
-        <div>
-            <h1>AutoDial</h1>
-            <span>Agent Automation</span>
-        </div>
+    <div class="header">
+        <h1>AutoDial</h1>
+        <p>Automated Data & USSD Processing</p>
     </div>
-</header>
 
+    <div class="container">
 
-<main>
+        <div class="card">
 
-    <!-- HERO -->
-    <section class="hero">
+            <div class="icon">
+                AD
+            </div>
 
-        <div class="app-icon">
-            A
-        </div>
+            <h2>AutoDial Android App</h2>
 
-        <h2>AutoDial APK</h2>
+            <div class="version">
+                Latest Version
+            </div>
 
-        <p class="subtitle">
-            Download the latest version of AutoDial for Android.
-        </p>
-
-        <div class="version-card">
-
-            <span class="latest">
-                LATEST VERSION
-            </span>
-
-            <h3>v1.0.0</h3>
-
-            <p>
-                Updated: September 10, 2026
+            <p class="description">
+                Download the latest AutoDial APK directly from the official
+                GitHub release. Install the application on your Android device
+                and start using AutoDial.
             </p>
 
-            <p>
-                APK Size: 28 MB
-            </p>
-
+            <!-- DOWNLOAD LATEST APK -->
             <a
-                class="download-button"
-                href="autodial.apk"
-                download
-            >
-                DOWNLOAD APK
+                class="download-btn"
+                href="https://github.com/YOUR-USERNAME/YOUR-REPOSITORY/releases/latest/download/AutoDial-debug.apk"
+                download>
+                ⬇ Download Latest APK
             </a>
 
-        </div>
+            <!-- VIEW RELEASE -->
+            <a
+                class="release-btn"
+                href="https://github.com/YOUR-USERNAME/YOUR-REPOSITORY/releases/latest"
+                target="_blank">
+                View latest release
+            </a>
 
-    </section>
+            <div class="features">
 
-
-    <!-- WHAT'S NEW -->
-    <section class="section">
-
-        <h2>What's New</h2>
-
-        <div class="features">
-
-            <div class="feature">
-                <div class="feature-icon">✓</div>
-                <div>
-                    <h3>Improved SMS Processing</h3>
-                    <p>
-                        Improved processing of incoming payment messages.
-                    </p>
+                <div class="feature">
+                    ✅ Automated USSD processing
                 </div>
-            </div>
 
-            <div class="feature">
-                <div class="feature-icon">✓</div>
-                <div>
-                    <h3>Better Automation</h3>
-                    <p>
-                        Improved USSD automation and transaction handling.
-                    </p>
+                <div class="feature">
+                    📱 M-Pesa SMS transaction processing
                 </div>
-            </div>
 
-            <div class="feature">
-                <div class="feature-icon">✓</div>
-                <div>
-                    <h3>Bug Fixes</h3>
-                    <p>
-                        General stability and performance improvements.
-                    </p>
+                <div class="feature">
+                    ⚡ Fast offer matching
                 </div>
+
+                <div class="feature">
+                    🔄 Automatic transaction tracking
+                </div>
+
+                <div class="feature">
+                    🔐 Secure settings and automation
+                </div>
+
             </div>
 
         </div>
 
-    </section>
+    </div>
 
-
-    <!-- INSTALLATION -->
-    <section class="section installation">
-
-        <h2>How to Install</h2>
-
-        <div class="step">
-            <span>1</span>
-            <p>Tap <strong>DOWNLOAD APK</strong>.</p>
-        </div>
-
-        <div class="step">
-            <span>2</span>
-            <p>Wait for the APK to finish downloading.</p>
-        </div>
-
-        <div class="step">
-            <span>3</span>
-            <p>Open the downloaded APK.</p>
-        </div>
-
-        <div class="step">
-            <span>4</span>
-            <p>Tap <strong>Install</strong>.</p>
-        </div>
-
-        <div class="step">
-            <span>5</span>
-            <p>Open AutoDial and continue setup.</p>
-        </div>
-
-        <div class="warning">
-            <strong>Important:</strong>
-            Do not uninstall your existing AutoDial app when updating
-            unless you are specifically instructed to do so.
-        </div>
-
-    </section>
-
-
-    <!-- SUPPORT -->
-    <section class="section support">
-
-        <h2>Need Help?</h2>
-
-        <p>
-            Contact AutoDial support if you have problems downloading
-            or installing the application.
-        </p>
-
-        <a
-            class="support-button"
-            href="https://wa.me/"
-        >
-            WhatsApp Support
-        </a>
-
-    </section>
-
-</main>
-
-
-<footer>
-
-    <p>© 2026 AutoDial</p>
-
-    <p>
-        Official AutoDial APK Download
-    </p>
-
-</footer>
+    <div class="footer">
+        © 2026 AutoDial. All rights reserved.
+    </div>
 
 </body>
 </html>
