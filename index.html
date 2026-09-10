@@ -1,88 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AutoCon · Download APK</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AutoDial · Automatic M-Pesa & USSD</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
 
-  <div class="wrap">
-
-    <!-- TOP LEFT: LOGO + APP NAME + VERSION -->
-    <div class="top">
-      <div class="logo">
-        <!-- Replace this with your real logo: <img src="logo.png" alt="AutoCon"> -->
-        <img src="logo.png" alt="AutoCon logo" onerror="this.style.display='none'" />
-      </div>
-      <div class="titles">
-        <div class="app-name">AutoCon</div>
-        <div class="version-line"><i class="fas fa-circle-check"></i> v2.4.1 · Latest Version</div>
-      </div>
+<!-- ============ NAVBAR ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="nav-logo-icon"><i class="fas fa-phone"></i></div>
+      <span>AutoDial</span>
     </div>
+    <div class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#download">Download</a>
+      <a href="#features">Features</a>
+      <a href="#details">Details</a>
+      <a href="#installation">Installation</a>
+    </div>
+  </div>
+</nav>
 
-    <!-- MAIN DOWNLOAD BUTTON -->
-    <div class="hero-download">
-      <a href="#" class="btn-main"><i class="fas fa-download"></i> Download APK</a>
-      <div class="hero-meta">
-        <div class="size">
-          <span><i class="fas fa-hdd"></i> 24.6 MB</span>
-          <span><i class="fas fa-shield-halved"></i> Verified &amp; Safe</span>
+<!-- ============ HERO ============ -->
+<section id="home" class="hero">
+  <div class="hero-left">
+    <span class="pill"><i class="fab fa-android"></i> Android Application</span>
+    <h1>Welcome to<br /><span class="green">AutoDial</span></h1>
+    <p class="hero-sub">
+      A fast and simple automatic M-Pesa and USSD automation application designed for agents.
+    </p>
+
+    <a href="#download" class="btn-download">
+      <i class="fas fa-download"></i> Download AutoDial APK
+    </a>
+
+    <div class="version-row">
+      <span class="dot"></span> Latest version: V.4
+      <span class="updated-badge">UPDATED!</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="phone-mock">
+      <div class="phone-screen">
+        <div class="phone-logo">
+          <div class="phone-logo-icon"><i class="fas fa-phone"></i></div>
+          <div class="phone-app-name">AutoDial</div>
+          <div class="phone-tagline">Automate · Dial · Grow</div>
         </div>
-        <span class="badge">Latest Release</span>
+        <div class="phone-version">Version 4.0</div>
       </div>
     </div>
 
-    <!-- ALL RELEASES -->
-    <div class="section-title"><i class="fas fa-code-branch"></i> All Releases</div>
-    <div class="section-sub">Full version history with date, time &amp; release notes.</div>
-
-    <div class="releases">
-
-      <div class="release">
-        <div class="ver"><span class="num">v2.4.1</span><span class="tag latest">Latest</span></div>
-        <div class="when"><i class="far fa-calendar"></i> 2025-02-18 <i class="far fa-clock"></i> 14:32 UTC</div>
-        <div class="notes"><i class="fas fa-bolt"></i> Improved OBD-II connection stability, added dark mode, fixed crash on Android 14.</div>
-        <a href="#" class="dl"><i class="fas fa-download"></i> Download</a>
+    <div class="hero-side-features">
+      <div class="side-feat">
+        <div class="side-icon"><i class="fas fa-bolt"></i></div>
+        <div><strong>Fast</strong><span>Process transactions in seconds.</span></div>
       </div>
-
-      <div class="release">
-        <div class="ver"><span class="num">v2.3.8</span><span class="tag">Stable</span></div>
-        <div class="when"><i class="far fa-calendar"></i> 2025-01-27 <i class="far fa-clock"></i> 09:15 UTC</div>
-        <div class="notes"><i class="fas fa-bolt"></i> New real-time sensor dashboard, support for Bluetooth 5.0, minor UI polish.</div>
-        <a href="#" class="dl"><i class="fas fa-download"></i> Download</a>
+      <div class="side-feat">
+        <div class="side-icon"><i class="fas fa-shield-halved"></i></div>
+        <div><strong>Secure</strong><span>Built for reliability and safety.</span></div>
       </div>
-
-      <div class="release">
-        <div class="ver"><span class="num">v2.3.0</span><span class="tag">Stable</span></div>
-        <div class="when"><i class="far fa-calendar"></i> 2024-12-10 <i class="far fa-clock"></i> 18:45 UTC</div>
-        <div class="notes"><i class="fas fa-bolt"></i> Major update: live data logging, export to CSV, redesigned settings panel.</div>
-        <a href="#" class="dl"><i class="fas fa-download"></i> Download</a>
+      <div class="side-feat">
+        <div class="side-icon"><i class="fas fa-phone"></i></div>
+        <div><strong>For Agents</strong><span>Simplify your M-Pesa and USSD work.</span></div>
       </div>
-
-      <div class="release">
-        <div class="ver"><span class="num">v2.1.2</span><span class="tag">Legacy</span></div>
-        <div class="when"><i class="far fa-calendar"></i> 2024-10-05 <i class="far fa-clock"></i> 11:20 UTC</div>
-        <div class="notes"><i class="fas fa-bolt"></i> Hotfix for GPS sync issue, improved battery efficiency by 18%.</div>
-        <a href="#" class="dl"><i class="fas fa-download"></i> Download</a>
-      </div>
-
     </div>
+  </div>
+</section>
 
-    <!-- QUERIES -->
-    <div class="queries">
-      <div class="left">
-        <h3><i class="fas fa-circle-question"></i> Have Queries?</h3>
-        <p>Send us a message or call — we'll respond quickly.</p>
-      </div>
-      <a href="https://wa.me/254791267095" class="phone-box" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i>
-        <div>
-          <div class="lbl">Send to WhatsApp / Call</div>
-          <div class="num">0791 267 095</div>
+<!-- ============ FEATURES ============ -->
+<section id="features" class="section">
+  <h2 class="section-heading"><span class="bar"></span> Features</h2>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feat-icon"><i class="fas fa-wallet"></i></div>
+      <h3>Automatic M-Pesa</h3>
+      <p>Automatically detects and processes supported M-Pesa transactions.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon"><i class="fas fa-hashtag"></i></div>
+      <h3>USSD Automation</h3>
+      <p>Automates supported USSD operations and offer processing.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon"><i class="fas fa-list-check"></i></div>
+      <h3>Transaction Management</h3>
+      <p>Manage completed, pending, failed and skipped transactions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DETAILS ============ -->
+<section id="details" class="section details-section">
+  <div class="details-phone">
+    <div class="phone-mock small">
+      <div class="phone-screen">
+        <div class="app-topbar">
+          <span>←</span><span>AutoDial</span><span>⚙</span>
         </div>
+        <div class="app-cards">
+          <div class="app-card green">
+            <div class="ac-num">12</div><div class="ac-label">Done</div>
+          </div>
+          <div class="app-card blue">
+            <div class="ac-num">1</div><div class="ac-label">Pending</div>
+          </div>
+        </div>
+        <div class="app-tx">Transactions</div>
+        <div class="app-stats">
+          <div><span class="s-num">12</span><span class="s-lbl">Success</span></div>
+          <div><span class="s-num">1</span><span class="s-lbl">Pending</span></div>
+          <div><span class="s-num">0</span><span class="s-lbl">Failed</span></div>
+        </div>
+        <div class="app-tabs">
+          <span class="tab active">🏠</span>
+          <span class="tab">📋</span>
+          <span class="tab">⚙</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="details-text">
+    <span class="bar-lg"></span>
+    <h2>Details</h2>
+    <p>AutoDial is designed for agents who need fast and reliable automation of supported M-Pesa and USSD operations.</p>
+    <p>The application supports transaction processing, offer matching, USSD automation, airtime management and transaction monitoring.</p>
+  </div>
+</section>
+
+<!-- ============ INSTALLATION ============ -->
+<section id="installation" class="section">
+  <h2 class="section-heading"><span class="bar"></span> Installation</h2>
+
+  <div class="install-grid">
+    <div class="install-step">
+      <div class="step-num">1</div>
+      <div class="step-icon"><i class="fas fa-download"></i></div>
+      <h4>Download APK</h4>
+      <p>Tap the Download AutoDial APK button.</p>
+    </div>
+    <div class="install-step">
+      <div class="step-num">2</div>
+      <div class="step-icon"><i class="fas fa-folder-open"></i></div>
+      <h4>Open File</h4>
+      <p>Open the downloaded APK file.</p>
+    </div>
+    <div class="install-step">
+      <div class="step-num">3</div>
+      <div class="step-icon"><i class="fas fa-gear"></i></div>
+      <h4>Allow Installation</h4>
+      <p>Allow installation from unknown sources if requested.</p>
+    </div>
+    <div class="install-step">
+      <div class="step-num">4</div>
+      <div class="step-icon"><i class="fas fa-mobile-screen-button"></i></div>
+      <h4>Install</h4>
+      <p>Install the application on your device.</p>
+    </div>
+    <div class="install-step">
+      <div class="step-num">5</div>
+      <div class="step-icon"><i class="fas fa-circle-check"></i></div>
+      <h4>Open &amp; Configure</h4>
+      <p>Open AutoDial and complete the setup.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD CTA ============ -->
+<section id="download" class="section download-section">
+  <h2>Ready to get started?</h2>
+  <p>Download AutoDial and automate your M-Pesa &amp; USSD operations today.</p>
+  <a href="#" class="btn-download big"><i class="fas fa-download"></i> Download AutoDial APK</a>
+  <div class="version-row center">
+    <span class="dot"></span> Latest version: V.4
+    <span class="updated-badge">UPDATED!</span>
+  </div>
+
+  <div class="query-line">
+    <i class="fab fa-whatsapp"></i>
+    Queries? WhatsApp / Call <a href="https://wa.me/254791267095">0791 267 095</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  © AutoDial. All rights reserved.
+</footer>
+
+</body>
+            </html>        </div>
       </a>
     </div>
 
