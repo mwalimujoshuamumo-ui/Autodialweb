@@ -1,424 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#101827">
-
-    <title>AutoDial</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #101827;
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            padding: 22px 6%;
-            border-bottom: 1px solid #263244;
-        }
-
-        .nav {
-            max-width: 950px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 25px;
-            font-weight: 800;
-        }
-
-        .logo span {
-            color: #22c55e;
-        }
-
-        .nav a {
-            color: #d1d5db;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 70px 20px;
-        }
-
-        .content {
-            width: 100%;
-            max-width: 650px;
-            text-align: center;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 8px 15px;
-            margin-bottom: 22px;
-            border-radius: 30px;
-            background: rgba(34, 197, 94, 0.12);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            color: #4ade80;
-            font-size: 13px;
-        }
-
-        h1 {
-            font-size: 48px;
-            margin-bottom: 18px;
-        }
-
-        h1 span {
-            color: #22c55e;
-        }
-
-        .description {
-            color: #9ca3af;
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .download-btn {
-            display: inline-block;
-            padding: 16px 30px;
-            background: #22c55e;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 17px;
-            font-weight: 700;
-        }
-
-        .download-btn:hover {
-            background: #16a34a;
-        }
-
-        .status {
-            margin-top: 15px;
-            color: #6b7280;
-            font-size: 13px;
-        }
-
-        .error {
-            display: none;
-            margin-top: 15px;
-            color: #fca5a5;
-            font-size: 13px;
-        }
-
-        footer {
-            padding: 22px;
-            text-align: center;
-            border-top: 1px solid #263244;
-            color: #6b7280;
-            font-size: 13px;
-        }
-
-        @media (max-width: 600px) {
-
-            h1 {
-                font-size: 36px;
-            }
-
-            .description {
-                font-size: 16px;
-            }
-
-            .download-btn {
-                width: 100%;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-
-    <div class="nav">
-
-        <div class="logo">
-            Auto<span>Dial</span>
-        </div>
-
-        <a href="download.html">
-            Download
-        </a>
-
-    </div>
-
-</header>
-
-
-<main class="main">
-
-    <div class="content">
-
-        <div class="badge">
-            Android Application
-        </div>
-
-        <h1>
-            Welcome to <span>AutoDial</span>
-        </h1>
-
-        <p class="description">
-            Automatic M-Pesa and USSD automation
-            designed for fast and simple transaction processing.
-        </p>
-
-        <a
-            id="downloadButton"
-            class="download-btn"
-            href="download.html">
-
-            ↓ Download AutoDial APK
-
-        </a>
-
-        <div id="status" class="status">
-            Latest APK available
-        </div>
-
-        <div id="error" class="error">
-            Download page unavailable.
-        </div>
-
-    </div>
-
-</main>
-
-
-<footer>
-    © AutoDial. All rights reserved.
-</footer>
-
-
-<script>
-
-    const OWNER = "mwalimujoshuamumo-ui";
-
-    const REPO = "Autodialweb";
-
-    const API =
-        "https://api.github.com/repos/" +
-        OWNER +
-        "/" +
-        REPO +
-        "/releases?per_page=20";
-
-
-    const button =
-        document.getElementById("downloadButton");
-
-    const status =
-        document.getElementById("status");
-
-    const error =
-        document.getElementById("error");
-
-
-    async function checkLatestRelease() {
-
-        try {
-
-            const response =
-                await fetch(API, {
-                    headers: {
-                        "Accept":
-                            "application/vnd.github+json"
-                    },
-                    cache: "no-store"
-                });
-
-
-            if (!response.ok) {
-                throw new Error("GitHub unavailable");
-            }
-
-
-            const releases =
-                await response.json();
-
-
-            let apk = null;
-
-
-            for (const release of releases) {
-
-                if (release.draft) {
-                    continue;
-                }
-
-
-                const assets =
-                    release.assets || [];
-
-
-                apk = assets.find(asset =>
-                    (asset.name || "")
-                        .toLowerCase()
-                        .endsWith(".apk")
-                );
-
-
-                /*
-                 * Your current release displays
-                 * the APK as UPDATED1.
-                 *
-                 * Ignore source ZIP files.
-                 */
-                if (!apk) {
-
-                    apk = assets.find(asset => {
-
-                        const name =
-                            (asset.name || "")
-                                .toLowerCase();
-
-                        return (
-                            !name.endsWith(".zip") &&
-                            !name.endsWith(".tar.gz") &&
-                            !name.endsWith(".tgz")
-                        );
-
-                    });
-
-                }
-
-
-                if (apk) {
-
-                    button.href =
-                        apk.browser_download_url;
-
-                    status.textContent =
-                        "Latest version: " +
-                        (release.tag_name || "Latest");
-
-                    return;
-                }
-
-            }
-
-
-            throw new Error("No APK found");
-
-        }
-
-        catch (e) {
-
-            /*
-             * The main button still takes the user
-             * to the dedicated download page.
-             */
-            button.href = "download.html";
-
-            status.textContent =
-                "Tap to open the download page.";
-
-            error.style.display = "none";
-
-        }
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111827">
+
+<title>AutoDial - Agent Automation App</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#111827;
+    color:#fff;
+    line-height:1.6;
+}
+
+header{
+    padding:20px 6%;
+    border-bottom:1px solid #263244;
+}
+
+.nav{
+    max-width:1050px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#20c963;
+}
+
+.nav a{
+    color:#d1d5db;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.hero{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    padding:75px 20px 55px;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 15px;
+    border-radius:30px;
+    background:rgba(32,201,99,.12);
+    border:1px solid rgba(32,201,99,.3);
+    color:#4ade80;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:45px;
+    line-height:1.15;
+    margin-bottom:18px;
+}
+
+h1 span{
+    color:#20c963;
+}
+
+.hero p{
+    max-width:680px;
+    margin:auto;
+    color:#9ca3af;
+    font-size:17px;
+}
+
+.download-section{
+    max-width:850px;
+    margin:0 auto 50px;
+    padding:0 20px;
+    text-align:center;
+}
+
+.download-box{
+    background:#1f2937;
+    border:1px solid #374151;
+    border-radius:15px;
+    padding:30px;
+}
+
+.download-box h2{
+    margin-bottom:10px;
+}
+
+.download-box p{
+    color:#9ca3af;
+    margin-bottom:20px;
+}
+
+.download-btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:#20c963;
+    color:#fff;
+    text-decoration:none;
+    border-radius:9px;
+    font-weight:700;
+}
+
+.download-btn:hover{
+    background:#16a34a;
+}
+
+.release-info{
+    margin-top:12px;
+    color:#9ca3af;
+    font-size:13px;
+}
+
+.section{
+    max-width:1050px;
+    margin:auto;
+    padding:30px 20px 60px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#fff;
+    color:#111827;
+    border-radius:13px;
+    padding:25px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#6b7280;
+    font-size:14px;
+}
+
+.details{
+    background:#1f2937;
+    border:1px solid #374151;
+    border-radius:14px;
+    padding:28px;
+}
+
+.details p{
+    color:#d1d5db;
+    margin-bottom:10px;
+}
+
+.installation{
+    background:#1f2937;
+    border:1px solid #374151;
+    border-radius:14px;
+    padding:28px;
+}
+
+.installation ol{
+    padding-left:22px;
+    color:#d1d5db;
+}
+
+.installation li{
+    margin-bottom:10px;
+}
+
+footer{
+    border-top:1px solid #263244;
+    padding:25px;
+    text-align:center;
+    color:#6b7280;
+    font-size:13px;
+}
+
+@media(max-width:700px){
+
+    h1{
+        font-size:36px;
     }
 
+    .cards{
+        grid-template-columns:1fr;
+    }
 
-    checkLatestRelease();
-
-</script>
-
-</body>
-</html>
-        h1 span {
-            color: #22c55e;
-        }
-
-        .text {
-            color: #9ca3af;
-            font-size: 17px;
-            margin-bottom: 28px;
-        }
-
-        .version {
-            display: inline-block;
-            padding: 9px 16px;
-            background: #1f2937;
-            border: 1px solid #374151;
-            border-radius: 8px;
-            color: #d1d5db;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-
-        .download-btn {
-            display: inline-block;
-            padding: 16px 32px;
-            background: #22c55e;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 17px;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .download-btn:hover {
-            background: #16a34a;
-            transform: translateY(-2px);
-        }
-
-        .download-btn.disabled {
-            background: #374151;
-            color: #9ca3af;
-            pointer-events: none;
-        }
-
-        .file {
-            margin-top: 14px;
-            color: #6b7280;
-            font-size: 13px;
-        }
-
-        .error {
-            display: none;
-            margin-top: 18px;
-            color: #fca5a5;
-            font-size: 14px;
-        }
-
-        footer {
-            padding: 22px;
-            text-align: center;
-            border-top: 1px solid #263244;
-            color: #6b7280;
-            font-size: 13px;
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 35px;
-            }
-
-            .download-btn {
-                width: 100%;
-            }
-        }
-    </style>
+    .download-btn{
+        width:100%;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -430,7 +223,7 @@
             Auto<span>Dial</span>
         </div>
 
-        <a class="home" href="download.html">
+        <a href="index.html">
             Home
         </a>
 
@@ -438,43 +231,183 @@
 </header>
 
 
-<main>
+<!-- HOME -->
+
+<section class="hero">
+
+    <div class="badge">
+        Android Application
+    </div>
+
+    <h1>
+        Welcome to <span>AutoDial</span>
+    </h1>
+
+    <p>
+        A fast and simple automatic M-Pesa and USSD
+        automation application designed for agents.
+    </p>
+
+</section>
+
+
+<!-- DOWNLOAD -->
+
+<section class="download-section">
 
     <div class="download-box">
 
-        <div class="app-icon">
-            ↓
-        </div>
+        <h2>
+            Download AutoDial
+        </h2>
 
-        <h1>
-            Download <span>AutoDial</span>
-        </h1>
-
-        <p class="text">
-            Get the latest AutoDial Android application.
+        <p>
+            Get the latest version of the AutoDial Android application.
         </p>
-
-        <div id="version" class="version">
-            Checking latest version...
-        </div>
-
-        <br>
 
         <a
             id="downloadButton"
-            class="download-btn disabled"
-            href="#"
-        >
-            Preparing download...
+            class="download-btn"
+            href="#">
+
+            ↓ Download AutoDial APK
+
         </a>
 
-        <div id="file" class="file"></div>
+        <div
+            id="releaseInfo"
+            class="release-info">
 
-        <div id="error" class="error"></div>
+            Checking latest release...
+
+        </div>
 
     </div>
 
-</main>
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Features
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>
+                Automatic M-Pesa
+            </h3>
+
+            <p>
+                Detect and process supported M-Pesa
+                transactions automatically.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                USSD Automation
+            </h3>
+
+            <p>
+                Automate supported USSD operations
+                using configured offers.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Transaction Management
+            </h3>
+
+            <p>
+                View completed, pending and failed
+                transactions in one place.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DETAILS -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Details
+    </h2>
+
+    <div class="details">
+
+        <p>
+            AutoDial is designed for agents who need
+            fast and reliable automation of supported
+            M-Pesa and USSD operations.
+        </p>
+
+        <p>
+            The application supports transaction
+            processing, offer matching, USSD automation,
+            airtime management and commission tracking.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- INSTALLATION -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Installation
+    </h2>
+
+    <div class="installation">
+
+        <ol>
+
+            <li>
+                Tap the Download AutoDial APK button.
+            </li>
+
+            <li>
+                Wait for the APK to finish downloading.
+            </li>
+
+            <li>
+                Open the downloaded APK.
+            </li>
+
+            <li>
+                Allow installation from your browser
+                if Android requests permission.
+            </li>
+
+            <li>
+                Install and open AutoDial.
+            </li>
+
+        </ol>
+
+    </div>
+
+</section>
 
 
 <footer>
@@ -484,31 +417,155 @@
 
 <script>
 
-    const OWNER = "mwalimujoshuamumo-ui";
+const OWNER = "mwalimujoshuamumo-ui";
+const REPO = "Autodialweb";
 
-    const REPO = "Autodialweb";
-
-    const API =
-        "https://api.github.com/repos/" +
-        OWNER +
-        "/" +
-        REPO +
-        "/releases?per_page=20";
-
-
-    const button =
-        document.getElementById("downloadButton");
-
-    const version =
-        document.getElementById("version");
-
-    const file =
-        document.getElementById("file");
-
-    const error =
-        document.getElementById("error");
+const API =
+    "https://api.github.com/repos/" +
+    OWNER +
+    "/" +
+    REPO +
+    "/releases?per_page=20";
 
 
+const button =
+    document.getElementById("downloadButton");
+
+const releaseInfo =
+    document.getElementById("releaseInfo");
+
+
+async function findLatestAPK(){
+
+    try{
+
+        const response =
+            await fetch(API,{
+                headers:{
+                    "Accept":
+                    "application/vnd.github+json"
+                },
+                cache:"no-store"
+            });
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Unable to access releases"
+            );
+
+        }
+
+
+        const releases =
+            await response.json();
+
+
+        let selectedRelease = null;
+        let selectedAPK = null;
+
+
+        for(const release of releases){
+
+            if(release.draft){
+                continue;
+            }
+
+
+            const assets =
+                release.assets || [];
+
+
+            selectedAPK =
+                assets.find(asset =>
+                    (asset.name || "")
+                    .toLowerCase()
+                    .endsWith(".apk")
+                );
+
+
+            /*
+             * Fallback for your current
+             * UPDATED1 APK asset.
+             */
+            if(!selectedAPK){
+
+                selectedAPK =
+                    assets.find(asset => {
+
+                        const name =
+                            (asset.name || "")
+                            .toLowerCase();
+
+
+                        return(
+                            !name.endsWith(".zip") &&
+                            !name.endsWith(".tar.gz") &&
+                            !name.endsWith(".tgz")
+                        );
+
+                    });
+
+            }
+
+
+            if(selectedAPK){
+
+                selectedRelease =
+                    release;
+
+                break;
+
+            }
+
+        }
+
+
+        if(
+            !selectedRelease ||
+            !selectedAPK
+        ){
+
+            throw new Error(
+                "No APK found"
+            );
+
+        }
+
+
+        button.href =
+            selectedAPK.browser_download_url;
+
+
+        releaseInfo.textContent =
+            "Latest version: " +
+            (
+                selectedRelease.tag_name ||
+                "Latest"
+            );
+
+
+    }catch(error){
+
+        button.href =
+            "https://github.com/mwalimujoshuamumo-ui/Autodialweb/releases";
+
+
+        releaseInfo.textContent =
+            "Latest APK available in Releases";
+
+    }
+
+}
+
+
+findLatestAPK();
+
+</script>
+
+</body>
+</html>
     async function getLatestAPK() {
 
         try {
