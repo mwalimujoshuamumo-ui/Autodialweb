@@ -11,15 +11,13 @@
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-
+<!-- NAVIGATION -->
 <header class="navbar">
-
     <div class="nav-container">
 
         <div class="logo">
             <div class="logo-icon">☎</div>
-            <span>Auto<span>Dial</span></span>
+            <div>Auto<span>Dial</span></div>
         </div>
 
         <nav>
@@ -31,12 +29,10 @@
         </nav>
 
     </div>
-
 </header>
 
 
-<!-- ================= HERO ================= -->
-
+<!-- HERO -->
 <section id="home" class="hero">
 
     <div class="hero-container">
@@ -58,7 +54,7 @@
             </p>
 
             <a href="#download" class="main-download">
-                ⬇ &nbsp; Download AutoDial APK
+                ↓ &nbsp; Download AutoDial APK
             </a>
 
             <div class="version">
@@ -69,8 +65,7 @@
         </div>
 
 
-        <!-- PHONE PREVIEW -->
-
+        <!-- PHONE -->
         <div class="phone-area">
 
             <div class="glow glow-one"></div>
@@ -103,22 +98,27 @@
 
             <div class="quick-feature feature-fast">
                 <div class="quick-icon">ϟ</div>
+
                 <div>
                     <strong>Fast</strong>
                     <p>Process transactions<br>in seconds.</p>
                 </div>
             </div>
 
+
             <div class="quick-feature feature-secure">
                 <div class="quick-icon">♢</div>
+
                 <div>
                     <strong>Secure</strong>
                     <p>Built for reliability<br>and safety.</p>
                 </div>
             </div>
 
+
             <div class="quick-feature feature-agent">
                 <div class="quick-icon">☎</div>
+
                 <div>
                     <strong>For Agents</strong>
                     <p>Simplify your<br>M-Pesa and USSD work.</p>
@@ -132,8 +132,7 @@
 </section>
 
 
-<!-- ================= DOWNLOAD ================= -->
-
+<!-- DOWNLOAD -->
 <section id="download" class="download-section">
 
     <div class="download-box">
@@ -150,7 +149,7 @@
            href="#"
            class="download-button">
 
-            ⬇ &nbsp; Download AutoDial APK
+            ↓ &nbsp; Download AutoDial APK
 
         </a>
 
@@ -163,8 +162,7 @@
 </section>
 
 
-<!-- ================= FEATURES ================= -->
-
+<!-- FEATURES -->
 <section id="features" class="content-section">
 
     <div class="section-heading">
@@ -236,8 +234,7 @@
 </section>
 
 
-<!-- ================= DETAILS ================= -->
-
+<!-- DETAILS -->
 <section id="details" class="details-section">
 
     <div class="details-phone">
@@ -245,26 +242,40 @@
         <div class="mini-phone">
 
             <div class="mini-top">
-                ← <strong>AutoDial</strong> ⋮
+                <span>←</span>
+                <strong>AutoDial</strong>
+                <span>⋮</span>
             </div>
+
 
             <div class="balance-grid">
 
                 <div class="balance green">
+
                     <small>M-Pesa</small>
+
                     <strong>KSh 0.00</strong>
+
                     <span>Balance</span>
+
                 </div>
 
+
                 <div class="balance blue">
+
                     <small>Tokens</small>
+
                     <strong>0</strong>
+
                     <span>Available</span>
+
                 </div>
 
             </div>
 
+
             <h4>Transactions</h4>
+
 
             <div class="transaction-grid">
 
@@ -285,8 +296,9 @@
 
             </div>
 
+
             <div class="mini-nav">
-                Home &nbsp;&nbsp; Transactions &nbsp;&nbsp; Settings
+                Home &nbsp; Transactions &nbsp; Settings
             </div>
 
         </div>
@@ -317,8 +329,7 @@
 </section>
 
 
-<!-- ================= INSTALLATION ================= -->
-
+<!-- INSTALLATION -->
 <section id="installation" class="installation-section">
 
     <div class="section-heading">
@@ -413,17 +424,13 @@
 </section>
 
 
-<!-- ================= FOOTER ================= -->
-
+<!-- FOOTER -->
 <footer>
-
     © AutoDial. All rights reserved.
-
 </footer>
 
 
-<!-- ================= GITHUB DOWNLOAD ================= -->
-
+<!-- LATEST GITHUB APK -->
 <script>
 
 const OWNER = "mwalimujoshuamumo-ui";
@@ -432,46 +439,113 @@ const REPO = "Autodialweb";
 const RELEASE_API =
     `https://api.github.com/repos/${OWNER}/${REPO}/releases?per_page=20`;
 
+
 async function loadLatestRelease() {
 
-    const button = document.getElementById("downloadButton");
-    const status = document.getElementById("downloadStatus");
-    const versionText = document.getElementById("versionText");
+    const button =
+        document.getElementById("downloadButton");
+
+    const status =
+        document.getElementById("downloadStatus");
+
+    const version =
+        document.getElementById("versionText");
+
 
     try {
 
-        const response = await fetch(RELEASE_API);
+        const response =
+            await fetch(RELEASE_API);
 
         if (!response.ok) {
-            throw new Error("GitHub release request failed");
+            throw new Error("Release request failed");
         }
 
-        const releases = await response.json();
 
-        const release = releases.find(item =>
-            !item.draft &&
-            item.assets &&
-            item.assets.length > 0
-        );
+        const releases =
+            await response.json();
+
+
+        const release =
+            releases.find(item =>
+                !item.draft &&
+                item.assets &&
+                item.assets.length > 0
+            );
+
 
         if (!release) {
-            throw new Error("No release available");
+            throw new Error("No release found");
         }
 
-        let apk = release.assets.find(asset =>
-            asset.name.toLowerCase().endsWith(".apk")
-        );
 
-        /*
-         * Backup for APK assets whose displayed filename
-         * does not visibly contain .apk.
-         */
+        let apk =
+            release.assets.find(asset =>
+                asset.name
+                    .toLowerCase()
+                    .endsWith(".apk")
+            );
+
 
         if (!apk) {
 
-            apk = release.assets.find(asset => {
+            apk =
+                release.assets.find(asset => {
 
-                const name = asset.name.toLowerCase();
+                    const name =
+                        asset.name.toLowerCase();
+
+                    return (
+                        !name.endsWith(".zip") &&
+                        !name.endsWith(".tar.gz") &&
+                        !name.endsWith(".tgz")
+                    );
+
+                });
+
+        }
+
+
+        if (!apk) {
+            throw new Error("APK not found");
+        }
+
+
+        button.href =
+            apk.browser_download_url;
+
+
+        version.textContent =
+            "Latest version: " +
+            (release.tag_name || "Latest");
+
+
+        status.textContent =
+            "Ready to download";
+
+
+    } catch (error) {
+
+        button.href =
+            `https://github.com/${OWNER}/${REPO}/releases/latest`;
+
+        version.textContent =
+            "Latest version";
+
+        status.textContent =
+            "Open latest GitHub release";
+
+    }
+
+}
+
+
+loadLatestRelease();
+
+</script>
+
+</body>
+</html>t name = asset.name.toLowerCase();
 
                 return !name.endsWith(".zip") &&
                        !name.endsWith(".tar.gz") &&
